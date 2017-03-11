@@ -6,16 +6,21 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controler.ContinuerVersApp;
 import anglais.Modele;
 
 public class VueDaccueil extends JPanel implements Vue	 {
 
+	Modele m;
 	private JButton Continuer = new JButton();
 	JLabel TexteBienvenue = new JLabel();
 	
 	
 	
 	public VueDaccueil(Modele m){
+		this.m = m ;
+		
+		
 		this.setLayout(null);
 		this.add(Continuer);
 		this.add(TexteBienvenue);
@@ -30,7 +35,12 @@ public class VueDaccueil extends JPanel implements Vue	 {
 		Continuer.setText("Continue");
 		Continuer.setVisible(true);
 		//Continuer.addActionListener(l);
-		
+		Continuer.addActionListener(new ContinuerVersApp(m,this));
 	}
-			
+	
+	public void update() {
+		m.getFenetre().setContentPane(this);
+		m.getFenetre().revalidate();
+	}
+	
 }

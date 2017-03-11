@@ -4,15 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import Vue.VueConnexion;
+import Vue.VueAide;
 import anglais.Modele;
 
-public class ContinuerVersApp implements ActionListener {
-	
+public class ContinuerVersPageAideDeVueCo implements ActionListener {
+
 	Modele m;
 	Vue v;
 	
-	public ContinuerVersApp(Modele m,Vue v){
+	public ContinuerVersPageAideDeVueCo(Modele m,Vue v){
 		this.m = m;
 		this.v= v;
 	}
@@ -25,8 +25,9 @@ public class ContinuerVersApp implements ActionListener {
 	
 	public void action()
 	{
-		VueConnexion vueCo = new VueConnexion(m);
-		vueCo.update();
+		VueAide vueA = new VueAide(m);
+		vueA.update();
 	}
 
+	
 }

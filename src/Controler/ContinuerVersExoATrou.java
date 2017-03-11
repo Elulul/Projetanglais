@@ -5,14 +5,15 @@ import java.awt.event.ActionListener;
 
 import Vue.Vue;
 import Vue.VueConnexion;
+import Vue.VueExoTexteATrou;
 import anglais.Modele;
 
-public class ContinuerVersApp implements ActionListener {
-	
+public class ContinuerVersExoATrou implements ActionListener {
+
 	Modele m;
 	Vue v;
 	
-	public ContinuerVersApp(Modele m,Vue v){
+	public ContinuerVersExoATrou(Modele m,Vue v){
 		this.m = m;
 		this.v= v;
 	}
@@ -25,8 +26,9 @@ public class ContinuerVersApp implements ActionListener {
 	
 	public void action()
 	{
-		VueConnexion vueCo = new VueConnexion(m);
-		vueCo.update();
+		VueExoTexteATrou vueEAT = new VueExoTexteATrou(m);
+		vueEAT.update();
 	}
-
+	
+	
 }
