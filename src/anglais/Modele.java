@@ -7,15 +7,19 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Modele {
 
 	private ArrayList<String> CorrectionExoATrouAsLike = new ArrayList<String>() ;
+	private ArrayList<ArrayList<String>> ListeVocATable = new ArrayList<ArrayList<String>>();
 	private Fenetre f;
 	
 	public Modele(Fenetre f){
 		this.f = f;
+		
+		//Initialisation de toutes les données
 		
 		// Initialisation de la liste contenant les reponses de l'exercice AS LIKE 
 		
@@ -30,6 +34,81 @@ public class Modele {
 		CorrectionExoATrouAsLike.add(8,"AS A");
 		CorrectionExoATrouAsLike.add(9,"LIKE");
 		
+		// Initialisation Voc A table
+		ArrayList<String> tampon = new ArrayList<String>();
+		tampon.add(0,"beurre");
+		tampon.add(1,"butter");
+		ListeVocATable.add(0,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"eau");
+		tampon.add(1,"water");
+		ListeVocATable.add(1,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"épice");
+		tampon.add(1,"spice");
+		ListeVocATable.add(2,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"épice");
+		tampon.add(1,"spice");
+		ListeVocATable.add(3,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"épicé");
+		tampon.add(1,"spicy");
+		ListeVocATable.add(4,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"frire");
+		tampon.add(1,"to fry");
+		ListeVocATable.add(5,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"la nourriture");
+		tampon.add(1,"the food");
+		ListeVocATable.add(6,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"la table");
+		tampon.add(1,"the table");
+		ListeVocATable.add(7,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"lait");
+		tampon.add(1,"milk");
+		ListeVocATable.add(8,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"le déjeuner");
+		tampon.add(1,"the lunch");
+		ListeVocATable.add(9,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"le dessert");
+		tampon.add(1,"the dessert");
+		ListeVocATable.add(10,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"le dîner");
+		tampon.add(1,"the dinner");
+		ListeVocATable.add(11,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"le fromage");
+		tampon.add(1,"the cheese");
+		ListeVocATable.add(12,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"le goûter");
+		tampon.add(1,"the snack");
+		ListeVocATable.add(13,tampon);
+		
+		tampon = new ArrayList<String>();
+		tampon.add(0,"le pain");
+		tampon.add(1,"the bread");
+		ListeVocATable.add(14,tampon);
 	}
 	
 	public Fenetre getFenetre(){
@@ -141,6 +220,20 @@ public class Modele {
 		
 		return res;
 		
+	}
+	
+	public ArrayList<Double> nbalea(int taille){
+		ArrayList<Double> res = new ArrayList<Double>();
+		Random r = new Random();
+		for (int i =0; i< taille;i++){
+			r = new Random();
+			res.add(i,r.nextDouble());
+		}
+		return res;
+	}
+	
+	public ArrayList<ArrayList<String>> getListeVocATable(){
+		return this.ListeVocATable;
 	}
 	
 	/*public static void main (String [] args) throws IOException{

@@ -3,9 +3,11 @@ package Vue;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controler.ContinuerVersPageDaccueil;
 import anglais.Modele;
 
 public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
@@ -52,6 +54,8 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 	private JLabel phrase10deb = new JLabel();
 	private JLabel phrase10fin = new JLabel();
 
+	private JButton retourAccueil = new JButton();
+	
 	
 	
 	public VuePageExoATrouAsLikeCorrection(Modele m,ArrayList<ArrayList<Object>> reponse){
@@ -60,6 +64,8 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 		this.m = m;
 		
 		this.setLayout(null);
+		
+		this.add(retourAccueil);
 		
 		this.add(phrase1deb);
 		this.add(phrase1fin);
@@ -198,8 +204,14 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 	
 		
 		}
+		
+		retourAccueil.setText("Home");
+		retourAccueil.setBounds(1000, 600, 125, 35);
+		retourAccueil.addActionListener(new ContinuerVersPageDaccueil(m,this));
 	
-	}	
+	}
+	
+	
 	
 	
 	public void initreponseAAfficher(){
