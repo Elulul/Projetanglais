@@ -51,8 +51,8 @@ public class Modele {
 		ListeVocATable.add(2,tampon);
 		
 		tampon = new ArrayList<String>();
-		tampon.add(0,"épice");
-		tampon.add(1,"spice");
+		tampon.add(0,"le petit déjeuner");
+		tampon.add(1,"the breakfast");
 		ListeVocATable.add(3,tampon);
 		
 		tampon = new ArrayList<String>();

@@ -34,7 +34,7 @@ public class VuePageExoVocATable extends JPanel implements Vue {
 				this.add(((JLabel) tampon.get(0)));
 				this.add(( JTextField) tampon.get(1));
 				((JLabel) tampon.get(0)).setBounds(20, i*40 + 40, 100, 20);
-				((JTextField) tampon.get(1)).setBounds(90, i*40 + 40, 100, 20);
+				((JTextField) tampon.get(1)).setBounds(150, i*40 + 40, 100, 20);
 			}
 			
 			else{
@@ -46,7 +46,7 @@ public class VuePageExoVocATable extends JPanel implements Vue {
 				this.add(((JLabel) tampon.get(1)));
 				this.add(( JTextField) tampon.get(0));
 				((JTextField) tampon.get(0)).setBounds(20, i*40 + 40, 100, 20);
-				((JLabel) tampon.get(1)).setBounds(130, i*40 + 40, 100, 20);
+				((JLabel) tampon.get(1)).setBounds(150, i*40 + 40, 100, 20);
 			}
 		}
 	}
