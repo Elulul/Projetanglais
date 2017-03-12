@@ -18,7 +18,7 @@ public class VuePageExo extends JPanel implements Vue{
 		
 		this.add(exoATrou);
 		
-		exoATrou.setText("Exercice with multpiple choice");
+		exoATrou.setText("Exercice with multiple choices");
 		exoATrou.setBounds(15,15, 225, 35);
 		exoATrou.addActionListener(new ContinuerVersPageExoATrou(m,this));
 		

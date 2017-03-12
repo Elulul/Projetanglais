@@ -40,10 +40,10 @@ public class Modele {
 
 		boolean res = true;
 		
-		FileReader f = new FileReader("C:/Users/lulu/Desktop/Projetanglais/sauvegarde/user2.csv");
+		FileReader f = new FileReader("./sauvegarde/user2.csv");
 		BufferedReader r = new BufferedReader(f);
 		
-		FileWriter fw= new FileWriter("C:/Users/lulu/Desktop/Projetanglais/sauvegarde/user2.csv",true);
+		FileWriter fw= new FileWriter("./sauvegarde/user2.csv",true);
 		BufferedWriter bw = new BufferedWriter(fw);
 		String l = r.readLine();
 		String tampon = "0";
@@ -84,7 +84,7 @@ public class Modele {
 	
 	public boolean Connexion(String utilisateur,String mdp) throws IOException{
 		boolean res = false;
-		FileReader f = new FileReader("C:/Users/lulu/Desktop/Projetanglais/sauvegarde/user2.csv");
+		FileReader f = new FileReader("./sauvegarde/user2.csv");
 		BufferedReader r = new BufferedReader(f);
 		String l = r.readLine();
 		String tampon = "0";

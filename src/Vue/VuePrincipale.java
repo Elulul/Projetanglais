@@ -3,7 +3,6 @@ package Vue;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import Controler.ContinuerVersPageExoATrouAsLike;
 import Controler.ContinuerVersPageExo;
 import anglais.Modele;
 
@@ -23,10 +22,10 @@ public class VuePrincipale extends JPanel implements Vue {
 		this.add(exercice);
 		
 		lecon.setText("Lesson");
-		lecon.setBounds(725, 300, 125, 35);
+		lecon.setBounds(650, 300, 125, 35);
 		
-		exercice.setText("Pratice");
-		exercice.setBounds(575, 300, 125, 35);
+		exercice.setText("Practice");
+		exercice.setBounds(500, 300, 125, 35);
 		exercice.addActionListener(new ContinuerVersPageExo(m,this));
 		//exercice.addActionListener(new ContinuerVersExoATrouAsLike(m,this));
 		

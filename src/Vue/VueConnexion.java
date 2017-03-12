@@ -4,9 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Controler.ContinuerVersNouvelUtilisateur;
-import Controler.ContinuerVersPageAideDeVueCo;
-import Controler.SeConnecter;
+import Controler.*;
 import anglais.Modele;
 
 public class VueConnexion extends JPanel implements Vue{
@@ -32,12 +30,14 @@ public class VueConnexion extends JPanel implements Vue{
 		
 		TxtNomUtilisateur.setText("User");
 		TxtNomUtilisateur.setBounds(575, 225, 125, 35);
-		
+		TxtNomUtilisateur.addMouseListener(new mouseListener(TxtNomUtilisateur));
+
 		Mdp.setText("Password");
 		Mdp.setBounds(575, 300, 125, 35);
+		Mdp.addMouseListener(new mouseListener(Mdp));
 		
 		Connexion.setBounds(975, 500, 150, 50);
-		Connexion.setText("Connection");
+		Connexion.setText("Connect");
 		Connexion.addActionListener(new SeConnecter(m,this));
 		
 		Help.setText("Help");
