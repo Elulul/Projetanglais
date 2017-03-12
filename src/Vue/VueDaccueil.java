@@ -1,40 +1,47 @@
 package Vue;
 
-import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Controler.ContinuerVersApp;
 import anglais.Modele;
 
 public class VueDaccueil extends JPanel implements Vue	 {
-
+	BufferedImage image;
 	Modele m;
 	private JButton Continuer = new JButton();
-	JLabel TexteBienvenue = new JLabel();
+
 	
 	
 	
 	public VueDaccueil(Modele m){
 		this.m = m ;
-		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/testfond3.jpg"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	       
+	       }
 		
 		this.setLayout(null);
 		this.add(Continuer);
-		this.add(TexteBienvenue);
 		
+	
 		
-		TexteBienvenue.setText("Welcome on the best application of the world ever made to learn english");
-		TexteBienvenue.setBounds(400, 250,600, 40);
-		TexteBienvenue.setFont(new java.awt.Font(Font.SERIF,Font.BOLD,18));
-		
-		Continuer.setBounds(575, 300, 138, 36);
+		Continuer.setBounds(205, 460, 830, 120);
 		Continuer.setToolTipText("Click here to enter the core of the application");
-		Continuer.setText("Continue");
 		Continuer.setVisible(true);
-		//Continuer.addActionListener(l);
+		Continuer.setOpaque(false);
+		Continuer.setContentAreaFilled(false);
+		Continuer.setBorder(null);
 		Continuer.addActionListener(new ContinuerVersApp(m,this));
 	}
 	
@@ -42,5 +49,9 @@ public class VueDaccueil extends JPanel implements Vue	 {
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
-	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        //g.drawImage(image, 0, 0, this); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }
