@@ -15,6 +15,35 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 	private JLabel phrase1fin = new JLabel();
 	private JComboBox phrase1scroll = new JComboBox();
 	
+	private JLabel phrase2deb = new JLabel();
+	private JLabel phrase2fin = new JLabel();
+	private JComboBox phrase2scroll = new JComboBox();
+	
+	private JLabel phrase3deb = new JLabel();
+	private JLabel phrase3fin = new JLabel();
+	private JComboBox phrase3scroll = new JComboBox();
+	
+	private JLabel phrase4deb = new JLabel();
+	private JLabel phrase4fin = new JLabel();
+	private JComboBox phrase4scroll = new JComboBox();
+	
+	private JLabel phrase5deb = new JLabel();
+	private JLabel phrase5fin = new JLabel();
+	private JComboBox phrase5scroll = new JComboBox();
+	
+	private JLabel phrase6deb = new JLabel();
+	private JLabel phrase6fin = new JLabel();
+	private JComboBox phrase6scroll = new JComboBox();
+	
+	private JLabel phrase7deb = new JLabel();
+	private JLabel phrase7fin = new JLabel();
+	private JComboBox phrase7scroll = new JComboBox();
+	
+	private JLabel phrase8deb = new JLabel();
+	private JLabel phrase8fin = new JLabel();
+	private JComboBox phrase8scroll = new JComboBox();
+	
+	
 	public VueExoTexteATrou(Modele m){
 		this.m = m;
 		Object[] elements = new Object[]{"AS","LIKE","AS THOUGH","LIKES","AS IF"};
@@ -24,20 +53,134 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 		this.add(Valider);
 		this.add(phrase1deb);
 		this.add(phrase1fin);
+		this.add(phrase2deb);
+		this.add(phrase2fin);
+		this.add(phrase3deb);
+		this.add(phrase3fin);
+		this.add(phrase4deb);
+		this.add(phrase4fin);
+		this.add(phrase5deb);
+		this.add(phrase5fin);
+		this.add(phrase6deb);
+		this.add(phrase6fin);
+		this.add(phrase7deb);
+		this.add(phrase7fin);
+		this.add(phrase8deb);
+		this.add(phrase8fin);
+		
+		
 		phrase1scroll = new JComboBox(elements);
 		this.add(phrase1scroll);
-		
+		 phrase2scroll =  new JComboBox(elements);
+		 this.add(phrase2scroll);
+		 phrase3scroll =  new JComboBox(elements);
+		 this.add(phrase3scroll);
+		 phrase4scroll =  new JComboBox(elements);
+		 this.add(phrase4scroll);
+		 phrase5scroll =  new JComboBox(elements);
+		 this.add(phrase5scroll);
+		 phrase6scroll =  new JComboBox(elements);
+		 this.add(phrase6scroll);
+		 phrase7scroll =  new JComboBox(elements);
+		 this.add(phrase7scroll);
+		 
+		 
 		
 		phrase1deb.setText("1. Really, there are very few people ");
 		phrase1deb.setBounds(25, 25, 400, 35);
 		
 		phrase1scroll.setBounds( 235,35, 100, 20);
+		
 
 		phrase1fin.setText("you... and that's why you're my best friend!");
 		phrase1fin.setBounds( 350,25, 400, 35);
 		
+		
+		
+		phrase2deb.setText("2. You must really do");
+		phrase2deb.setBounds(25, 75, 200, 35);
+		
+		phrase2scroll.setBounds( 150,85, 100, 20);
+		
+
+		phrase2fin.setText("the doctor told you. Follow his advice, and you will be fine.");
+		phrase2fin.setBounds( 260,75, 400, 35);
+		
+		
+		
+		
+		phrase3deb.setText("3. He's going to work");
+		phrase3deb.setBounds(25, 125, 200, 35);
+		
+		phrase3scroll.setBounds( 150,135, 100, 20);
+		
+
+		phrase3fin.setText("English guide during the summer holiday.");
+		phrase3fin.setBounds( 260,125, 400, 35);
+		
+		
+		
+		
+		phrase4deb.setText("4. Look at Bob eating his meal... He looks");
+		phrase4deb.setBounds(25, 175, 400, 35);
+		
+		phrase4scroll.setBounds( 265,185, 100, 20);
+		
+
+		phrase4fin.setText("English guide during the summer holiday.");
+		phrase4fin.setBounds( 380,175, 400, 35);
+		
+		
+		
+		phrase5deb.setText("5.Behave");
+		phrase5deb.setBounds(25, 225, 75, 35);
+		
+		phrase5scroll.setBounds( 90,235, 100, 20);
+		
+
+		phrase5fin.setText("real brother and help her out of this situation... ");
+		phrase5fin.setBounds( 200,225, 400, 35);
+		
+		
+		phrase6deb.setText("6.Jerry doesn't feel");
+		phrase6deb.setBounds(25, 275, 175, 35);
+		
+		phrase6scroll.setBounds( 145,285, 100, 20);
+		
+
+		phrase6fin.setText("coming to my party... Try to persuade him! ");
+		phrase6fin.setBounds( 260,275, 400, 35);
+		
+		phrase7deb.setText("7. It looks");
+		phrase7deb.setBounds(25, 325, 100, 35);
+		
+		phrase7scroll.setBounds( 90,335, 100, 20);
+		
+
+		phrase7fin.setText("a storm is going to break out. Let's hurry home! ");
+		phrase7fin.setBounds( 210,325, 400, 35);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		Valider.setText("Validate");
 		Valider.setBounds(1000, 600, 125, 35);
+		
+		
 		
 		
 		
