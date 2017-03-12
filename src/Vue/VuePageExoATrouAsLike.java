@@ -5,9 +5,10 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controler.ContinuerVersPageExoATrouAsLikeCorrection;
 import anglais.Modele;
 
-public class VueExoTexteATrou extends JPanel implements Vue{
+public class VuePageExoATrouAsLike extends JPanel implements Vue{
 	
 	Modele m;
 	private JButton Valider = new JButton();
@@ -17,36 +18,44 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 	
 	private JLabel phrase2deb = new JLabel();
 	private JLabel phrase2fin = new JLabel();
-	private JComboBox phrase2scroll = new JComboBox();
+	public JComboBox phrase2scroll = new JComboBox();
 	
 	private JLabel phrase3deb = new JLabel();
 	private JLabel phrase3fin = new JLabel();
-	private JComboBox phrase3scroll = new JComboBox();
+	public JComboBox phrase3scroll = new JComboBox();
 	
 	private JLabel phrase4deb = new JLabel();
 	private JLabel phrase4fin = new JLabel();
-	private JComboBox phrase4scroll = new JComboBox();
+	public JComboBox phrase4scroll = new JComboBox();
 	
 	private JLabel phrase5deb = new JLabel();
 	private JLabel phrase5fin = new JLabel();
-	private JComboBox phrase5scroll = new JComboBox();
+	public JComboBox phrase5scroll = new JComboBox();
 	
 	private JLabel phrase6deb = new JLabel();
 	private JLabel phrase6fin = new JLabel();
-	private JComboBox phrase6scroll = new JComboBox();
+	public JComboBox phrase6scroll = new JComboBox();
 	
 	private JLabel phrase7deb = new JLabel();
 	private JLabel phrase7fin = new JLabel();
-	private JComboBox phrase7scroll = new JComboBox();
+	public JComboBox phrase7scroll = new JComboBox();
 	
 	private JLabel phrase8deb = new JLabel();
 	private JLabel phrase8fin = new JLabel();
-	private JComboBox phrase8scroll = new JComboBox();
+	public JComboBox phrase8scroll = new JComboBox();
+	
+	private JLabel phrase9deb = new JLabel();
+	private JLabel phrase9fin = new JLabel();
+	public JComboBox phrase9scroll = new JComboBox();
+	
+	private JLabel phrase10deb = new JLabel();
+	private JLabel phrase10fin = new JLabel();
+	public JComboBox phrase10scroll = new JComboBox();
 	
 	
-	public VueExoTexteATrou(Modele m){
+	public VuePageExoATrouAsLike(Modele m){
 		this.m = m;
-		Object[] elements = new Object[]{"AS","LIKE","AS THOUGH","LIKES","AS IF"};
+		Object[] elements = new Object[]{"AS","LIKE","AS THOUGH","LIKES","AS IF","HAS","LIKE IF","AS A","LIKE A","AS AN","LIKED","AS LIKE"};
 		
 		this.setLayout(null);
 		
@@ -67,10 +76,14 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 		this.add(phrase7fin);
 		this.add(phrase8deb);
 		this.add(phrase8fin);
+		this.add(phrase9deb);
+		this.add(phrase9fin);
+		this.add(phrase10deb);
+		this.add(phrase10fin);
 		
 		
-		phrase1scroll = new JComboBox(elements);
-		this.add(phrase1scroll);
+		setPhrase1scroll(new JComboBox(elements));
+		this.add(getPhrase1scroll());
 		 phrase2scroll =  new JComboBox(elements);
 		 this.add(phrase2scroll);
 		 phrase3scroll =  new JComboBox(elements);
@@ -83,13 +96,19 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 		 this.add(phrase6scroll);
 		 phrase7scroll =  new JComboBox(elements);
 		 this.add(phrase7scroll);
+		 phrase8scroll =  new JComboBox(elements);
+		 this.add(phrase8scroll);
+		 phrase9scroll =  new JComboBox(elements);
+		 this.add(phrase9scroll);
+		 phrase10scroll =  new JComboBox(elements);
+		 this.add(phrase10scroll);
 		 
 		 
 		
 		phrase1deb.setText("1. Really, there are very few people ");
 		phrase1deb.setBounds(25, 25, 400, 35);
 		
-		phrase1scroll.setBounds( 235,35, 100, 20);
+		getPhrase1scroll().setBounds( 235,35, 100, 20);
 		
 
 		phrase1fin.setText("you... and that's why you're my best friend!");
@@ -161,6 +180,33 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 		phrase7fin.setBounds( 210,325, 400, 35);
 		
 		
+		phrase8deb.setText("8. 'I'm the boss',");
+		phrase8deb.setBounds(25, 375, 175, 35);
+		
+		phrase8scroll.setBounds( 125,385, 100, 20);
+		
+
+		phrase8fin.setText("my father used to say...");
+		phrase8fin.setBounds( 240,375, 400, 35);
+		
+		phrase9deb.setText("9. She can be regarded");
+		phrase9deb.setBounds(25, 425, 225, 35);
+		
+		phrase9scroll.setBounds( 165,435, 100, 20);
+		
+
+		phrase9fin.setText("my father used to say...");
+		phrase9fin.setBounds( 280,425, 400, 35);
+		
+		phrase10deb.setText("10. 'I wanna be");
+		phrase10deb.setBounds(25, 475, 175, 35);
+		
+		phrase10scroll.setBounds( 125,485, 100, 20);
+		
+
+		phrase10fin.setText("you!");
+		phrase10fin.setBounds( 240,475, 400, 35);
+
 		
 		
 		
@@ -169,16 +215,13 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 		
 		
 		
-		
-		
-		
-		
-		
+	
 		
 		
 		
 		Valider.setText("Validate");
 		Valider.setBounds(1000, 600, 125, 35);
+		Valider.addActionListener(new ContinuerVersPageExoATrouAsLikeCorrection(m,this));
 		
 		
 		
@@ -195,6 +238,18 @@ public class VueExoTexteATrou extends JPanel implements Vue{
 	public void update() {
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
+	}
+
+
+
+	public JComboBox getPhrase1scroll() {
+		return phrase1scroll;
+	}
+
+
+
+	public void setPhrase1scroll(JComboBox phrase1scroll) {
+		this.phrase1scroll = phrase1scroll;
 	}
 	
 }

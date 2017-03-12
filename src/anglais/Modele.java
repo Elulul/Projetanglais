@@ -6,14 +6,30 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Modele {
 
+	private ArrayList<String> CorrectionExoATrouAsLike = new ArrayList<String>() ;
 	private Fenetre f;
 	
 	public Modele(Fenetre f){
 		this.f = f;
+		
+		// Initialisation de la liste contenant les reponses de l'exercice AS LIKE 
+		
+		CorrectionExoATrouAsLike.add(0,"LIKE");
+		CorrectionExoATrouAsLike.add(1,"AS");
+		CorrectionExoATrouAsLike.add(2,"AS AN");
+		CorrectionExoATrouAsLike.add(3,"AS IF");
+		CorrectionExoATrouAsLike.add(4,"LIKE A");
+		CorrectionExoATrouAsLike.add(5,"LIKE");
+		CorrectionExoATrouAsLike.add(6,"AS THOUGH");
+		CorrectionExoATrouAsLike.add(7,"AS");
+		CorrectionExoATrouAsLike.add(8,"AS A");
+		CorrectionExoATrouAsLike.add(9,"LIKE");
+		
 	}
 	
 	public Fenetre getFenetre(){
@@ -90,6 +106,42 @@ public class Modele {
 		return res;
 	}
 	
+	public ArrayList<String> getCorrectionExoATrouAsLike(){
+		return this. CorrectionExoATrouAsLike;
+	}
+	
+	
+	public ArrayList<ArrayList<Object>> compareReponseExoATrouAsLike(ArrayList<ArrayList<Object>> reponse){
+		ArrayList<Object> tampon ;
+		ArrayList<ArrayList<Object>> res = new ArrayList<ArrayList<Object>>();
+		for(int i = 0; i < reponse.size();i++){
+			if(reponse.get(i).get(0).toString().equals(this.CorrectionExoATrouAsLike.get(i))){
+				tampon = new ArrayList<Object>();
+				tampon.add(0,true);
+				tampon.add(1,reponse.get(i).get(1));
+				tampon.add(2,reponse.get(i).get(2));
+				tampon.add(3,this.CorrectionExoATrouAsLike.get(i));
+				tampon.add(4,reponse.get(i).get(0));
+				res.add(i, tampon );
+				
+			}
+			else{
+				tampon = new ArrayList<Object>();
+				tampon.add(false);
+				tampon.add(1, reponse.get(i).get(1));
+				tampon.add(2, reponse.get(i).get(2));
+				tampon.add(3,this.CorrectionExoATrouAsLike.get(i));
+				tampon.add(4,reponse.get(i).get(0));
+				res.add(i, tampon );
+				
+			}
+			
+		}
+		
+		
+		return res;
+		
+	}
 	
 	/*public static void main (String [] args) throws IOException{
 		Fenetre f = new Fenetre();

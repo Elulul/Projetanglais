@@ -4,16 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import Vue.VueConnexion;
-import Vue.VueExoTexteATrou;
+import Vue.VuePageExo;
+import Vue.VuePageExoATrou;
 import anglais.Modele;
 
-public class ContinuerVersExoATrou implements ActionListener {
+public class ContinuerVersPageExoATrou implements ActionListener {
 
 	Modele m;
 	Vue v;
 	
-	public ContinuerVersExoATrou(Modele m,Vue v){
+	public   ContinuerVersPageExoATrou(Modele m,Vue v){
 		this.m = m;
 		this.v= v;
 	}
@@ -26,9 +26,8 @@ public class ContinuerVersExoATrou implements ActionListener {
 	
 	public void action()
 	{
-		VueExoTexteATrou vueEAT = new VueExoTexteATrou(m);
-		vueEAT.update();
+		VuePageExoATrou vuePEAT = new VuePageExoATrou(m);
+		vuePEAT.update();
 	}
-	
 	
 }
