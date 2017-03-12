@@ -119,7 +119,7 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 		
 		
 
-		phrase4fin.setText("English guide during the summer holiday.");
+		phrase4fin.setText("he were starving! ");
 		phrase4fin.setBounds( 380,175, 400, 35);
 		
 		
@@ -165,8 +165,8 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 
 		
 
-		phrase9fin.setText("my father used to say...");
-		phrase9fin.setBounds( 280,425, 400, 35);
+		phrase9fin.setText("very trustworthy person... You may follow her advice. ");
+		phrase9fin.setBounds( 280,425, 500, 35);
 		
 		phrase10deb.setText("10. 'I wanna be");
 		phrase10deb.setBounds(25, 475, 175, 35);
@@ -191,7 +191,7 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 				reponseAAfficher.get(i).setForeground(new Color(238,0,0));
 				this.add(reponseAAfficher.get(i));
 				reponseAAfficher.get(i).setBounds((int)reponse.get(i).get(1),(int) reponse.get(i).get(2), 100, 20);
-				Correction.get(i).setText("Good answer :"+ (String) reponse.get(i).get(3).toString());
+				Correction.get(i).setText((i+1)+"."+ "Good answer :"+ (String) reponse.get(i).get(3).toString());
 				this.add(Correction.get(i));
 				Correction.get(i).setBounds(900,50*i + 25,400,20 );
 			}
