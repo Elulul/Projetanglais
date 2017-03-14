@@ -12,7 +12,7 @@ import anglais.Modele;
 public class VuePageExoVoltaire extends JPanel implements Vue{
 
 	Modele m;
-	String maphras = " I am sleeping in my room.";
+	String maphras = " I is sleeping in my room.";
 	JLabel maphrase = new JLabel();
 	
 	Font f = new Font("Serif", Font.PLAIN, 36); // par exemple 
@@ -26,7 +26,7 @@ public class VuePageExoVoltaire extends JPanel implements Vue{
 		
 		this.add(maphrase);
 		
-		maphrase.setText("I am sleeping in my room.");
+		maphrase.setText("I is sleeping in my room.");
 		maphrase.setBounds(450, 300,800, 50);
 		maphrase.setBackground(null);
 		maphrase.addMouseListener(new recupererPosVoltaire(m,this));

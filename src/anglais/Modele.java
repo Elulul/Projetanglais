@@ -34,6 +34,8 @@ public class Modele {
 		CorrectionExoATrouAsLike.add(8,"AS A");
 		CorrectionExoATrouAsLike.add(9,"LIKE");
 		
+		// End Initialisation de la liste contenant les reponses de l'exercice AS LIK
+		
 		// Initialisation Voc A table
 		ArrayList<String> tampon = new ArrayList<String>();
 		tampon.add(0,"beurre");
@@ -109,6 +111,10 @@ public class Modele {
 		tampon.add(0,"le pain");
 		tampon.add(1,"the bread");
 		ListeVocATable.add(14,tampon);
+		
+		//End Voc A Table
+		
+		//End Toute les données
 	}
 	
 	public Fenetre getFenetre(){
@@ -235,7 +241,7 @@ public class Modele {
 	public ArrayList<ArrayList<String>> getListeVocATable(){
 		return this.ListeVocATable;
 	}
-	
+	// Voltaire
 	public boolean appartientRect(int xhghd,int xbgbd,int yhgbg,int yhdbd,int xa,int ya){
 		boolean res = false;
 		
@@ -245,6 +251,29 @@ public class Modele {
 		
 		return res;
 	}
+	
+	
+	public boolean aTrouverLaRepSansBoutton(boolean pasdefaute,boolean appartientrec,int xhghd,int xbgbd,int yhgbg,int yhdbd,int xa,int ya){
+		boolean res  = false;
+		
+		if(!pasdefaute){
+			if(this.appartientRect(xhghd, xbgbd, yhgbg, yhdbd, xa, ya)){
+				res = true;
+			}
+		}
+		
+		return res;
+	}
+	
+	public boolean aTrouverLaRepAvecBoutton(boolean pasdefaute){
+		boolean res = false;
+		if(pasdefaute){
+			res = true;
+		}
+		return res;
+	}
+	
+	// Fin Voltaire
 	
 	/*public static void main (String [] args) throws IOException{
 		Fenetre f = new Fenetre();
