@@ -236,6 +236,16 @@ public class Modele {
 		return this.ListeVocATable;
 	}
 	
+	public boolean appartientRect(int xhghd,int xbgbd,int yhgbg,int yhdbd,int xa,int ya){
+		boolean res = false;
+		
+		if(xa > xhghd && xa < xbgbd && ya > yhgbg && ya <yhdbd ){
+			res = true;
+		}
+		
+		return res;
+	}
+	
 	/*public static void main (String [] args) throws IOException{
 		Fenetre f = new Fenetre();
 		System.out.println("bon lancement");

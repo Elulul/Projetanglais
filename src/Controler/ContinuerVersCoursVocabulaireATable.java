@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import Vue.VueCoursRegleAsLike;
-import Vue.VueCoursVocabulaireATable;
+import Vuecours.VueCoursRegleAsLike;
+import Vuecours.VueCoursVocabulaireATable;
 import anglais.Modele;
 
 public class ContinuerVersCoursVocabulaireATable implements ActionListener{

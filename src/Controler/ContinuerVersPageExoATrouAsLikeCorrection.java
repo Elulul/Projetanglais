@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import Vue.Vue;
-import Vue.VuePageExoATrouAsLike;
-import Vue.VuePageExoATrouAsLikeCorrection;
+import VuePageExo.VuePageExoATrouAsLike;
+import VuePageExo.VuePageExoATrouAsLikeCorrection;
 import anglais.Modele;
 
 public class ContinuerVersPageExoATrouAsLikeCorrection implements ActionListener {

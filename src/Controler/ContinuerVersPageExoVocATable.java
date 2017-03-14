@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import Vue.VuePageExoVocATable;
+import VuePageExo.VuePageExoVocATable;
 import anglais.Modele;
 
 public class ContinuerVersPageExoVocATable implements ActionListener {

@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import Vue.VueCours;
+import Vuecours.VueCours;
 import anglais.Modele;
 
 public class ContinuerVersCours implements ActionListener {

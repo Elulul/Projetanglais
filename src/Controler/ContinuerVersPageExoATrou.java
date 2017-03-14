@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import Vue.VuePageExo;
-import Vue.VuePageExoATrou;
+import VuePageExo.VuePageExo;
+import VuePageExo.VuePageExoATrou;
 import anglais.Modele;
 
 public class ContinuerVersPageExoATrou implements ActionListener {

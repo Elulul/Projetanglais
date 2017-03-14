@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import Vue.Vue;
 import Vue.VueAide;
-import Vue.VuePageExo;
+import VuePageExo.VuePageExo;
 import anglais.Modele;
 
 public class ContinuerVersPageExo implements ActionListener {
