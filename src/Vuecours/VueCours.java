@@ -3,7 +3,7 @@ package Vuecours;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import ControlerVersCours.ContinuerVersCours;
+import Controler.ContinuerVersPageDaccueil;
 import ControlerVersCours.ContinuerVersCoursRegleAsLike;
 import ControlerVersCoursVoc.ContinuerVersCoursVocabulaireATable;
 import ControlerVersCoursVoc.ContinuerVersCoursVocabulaireAnimaux;
@@ -61,7 +61,7 @@ public class VueCours extends JPanel implements Vue {
 		
 		retour.setText("Home");
 		retour.setBounds(20, 20, 138, 36);
-		retour.addActionListener(new ContinuerVersCours(m,this));
+		retour.addActionListener(new ContinuerVersPageDaccueil(m,this));
 		
 		RegleAsLike.setText("AS LIKE");
 		RegleAsLike.setBounds(75, 75, 138, 36);
