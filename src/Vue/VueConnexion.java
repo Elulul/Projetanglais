@@ -48,10 +48,10 @@ public class VueConnexion extends JPanel implements Vue{
 	       }
 		
 		TxtNomUtilisateur.setBounds(530, 225, 160, 25);
-		TxtNomUtilisateur.addMouseListener(new mouseListener(TxtNomUtilisateur));
+		TxtNomUtilisateur.addActionListener(new SeConnecter(m,this));
 
 		Mdp.setBounds(530, 275, 160, 25);
-		Mdp.addMouseListener(new mouseListener(Mdp));
+		Mdp.addActionListener(new SeConnecter(m,this));
 		
 		Connexion.setBounds(725, 275, 147, 25);
 		Connexion.addActionListener(new SeConnecter(m,this));
