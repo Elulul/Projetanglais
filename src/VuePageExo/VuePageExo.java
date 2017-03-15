@@ -3,9 +3,9 @@ package VuePageExo;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import Controler.ContinuerVersPageExoATrou;
-import Controler.ContinuerVersPageExoVocATable;
-import Controler.ContinuerVersPageExoVoltaire;
+import ControlerVersPageExo.ContinuerVersPageExoATrou;
+import ControlerVersPageExo.ContinuerVersPageExoVocATable;
+import ControlerVersPageExo.ContinuerVersPageExoVoltaire;
 import Vue.Vue;
 import anglais.Modele;
 

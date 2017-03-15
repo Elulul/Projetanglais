@@ -3,8 +3,8 @@ package Vue;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import Controler.ContinuerVersCours;
-import Controler.ContinuerVersPageExo;
+import ControlerVersCours.ContinuerVersCours;
+import ControlerVersPageExo.ContinuerVersPageExo;
 import anglais.Modele;
 
 public class VuePrincipale extends JPanel implements Vue {

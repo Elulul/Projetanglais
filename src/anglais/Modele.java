@@ -14,7 +14,9 @@ public class Modele {
 
 	private ArrayList<String> CorrectionExoATrouAsLike = new ArrayList<String>() ;
 	private ArrayList<ArrayList<String>> ListeVocATable = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocHabit = new ArrayList<ArrayList<String>>();
 	private Fenetre f;
+	
 	
 	public Modele(Fenetre f){
 		this.f = f;
@@ -114,9 +116,27 @@ public class Modele {
 		
 		//End Voc A Table
 		
+		//Initialisation VocHabit
+		
+		try {
+			this.setListeVocHabit(this.getListVocHabit());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//End VocHabit
+		
 		//End Toute les données
 	}
 	
+	public ArrayList<ArrayList<String>> getListeVocHabit() {
+		return ListeVocHabit;
+	}
+
+	public void setListeVocHabit(ArrayList<ArrayList<String>> listeVocHabit) {
+		ListeVocHabit = listeVocHabit;
+	}
+
 	public Fenetre getFenetre(){
 		return (Fenetre) f;
 	}
@@ -191,6 +211,45 @@ public class Modele {
 		return res;
 	}
 	
+	
+	// Vocabulaire
+	public ArrayList<ArrayList<String>> getListeVocATable(){
+		return this.ListeVocATable;
+	}
+	
+
+	public ArrayList<ArrayList<String>> getListVocHabit() throws IOException{
+		ArrayList<ArrayList<String> > res = new ArrayList<ArrayList<String>>();
+		ArrayList<String> tampon = new ArrayList<String>();
+		FileReader f = new FileReader("C:/Users/lulu/Desktop/Workplace/Projetanglais/sauvegarde/VocHabit.csv");
+		BufferedReader r = new BufferedReader(f);
+		String u;
+		String l = r.readLine();
+		
+		int i =0;
+		
+	
+		while( l != null){
+			Scanner sc = new Scanner(l).useDelimiter(";");
+			tampon = new ArrayList<String>();
+			
+			u = sc.next();;
+			tampon.add(u);
+			u = sc.next();
+			tampon.add(u);
+			res.add(i,tampon);
+				
+			l = r.readLine();
+			i++;
+		}
+		affiche(res);
+		return res;
+		
+	}
+	
+	//Fin Vocabulaire
+	
+	
 	public ArrayList<String> getCorrectionExoATrouAsLike(){
 		return this. CorrectionExoATrouAsLike;
 	}
@@ -238,9 +297,7 @@ public class Modele {
 		return res;
 	}
 	
-	public ArrayList<ArrayList<String>> getListeVocATable(){
-		return this.ListeVocATable;
-	}
+	
 	// Voltaire
 	public boolean appartientRect(int xhghd,int xbgbd,int yhgbg,int yhdbd,int xa,int ya){
 		boolean res = false;
@@ -271,6 +328,14 @@ public class Modele {
 			res = true;
 		}
 		return res;
+	}
+	
+	public static void affiche(ArrayList<ArrayList<String>> t){
+		for (int i= 0 ; i<t.size();i++){
+			for(int j =0 ; j < t.get(i).size();j++){
+				System.out.println(i + t.get(i).get(j));
+			}
+		}
 	}
 	
 	// Fin Voltaire

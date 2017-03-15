@@ -5,7 +5,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Controler.ContinuerVersPageExoATrouAsLikeCorrection;
+import ControlerVersPageExo.ContinuerVersPageExoATrouAsLikeCorrection;
 import Vue.Vue;
 import anglais.Modele;
 

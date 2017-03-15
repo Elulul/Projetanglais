@@ -3,8 +3,8 @@ package VuePageExo;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import Controler.ContinuerVersPageExo;
-import Controler.ContinuerVersPageExoATrouAsLike;
+import ControlerVersPageExo.ContinuerVersPageExo;
+import ControlerVersPageExo.ContinuerVersPageExoATrouAsLike;
 import Vue.Vue;
 import anglais.Modele;
 
