@@ -23,9 +23,9 @@ public class VueConnexion extends JPanel implements Vue{
 	Modele m;
 	private JTextField TxtNomUtilisateur= new JTextField();
 	private JPasswordField Mdp = new JPasswordField();
-	private JButton Connexion = new JButton(new ImageIcon ("./images/TestSignIN.png"));
+	private JButton Connexion = new JButton(new ImageIcon ("./images/SignIN.png"));
 	private JButton Help = new JButton(new ImageIcon ("./images/Help.png"));
-	private JButton NouvelUtilisateur = new JButton(new ImageIcon ("./images/TestNewUser.png"));
+	private JButton NouvelUtilisateur = new JButton(new ImageIcon ("./images/NewUser.png"));
 	private BufferedImage image;
 	
 	public VueConnexion(Modele m){
