@@ -1,5 +1,6 @@
 package Vuecours;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -23,7 +24,7 @@ public class VueCours extends JPanel implements Vue {
 
 	Modele m;
 	
-	private JButton retour = new JButton();
+	private JButton retour = new JButton(new ImageIcon("./images/Home.png"));
 	private JButton RegleAsLike = new JButton();
 	private JButton VocabulaireATable = new JButton();
 	private JButton VocabulaireAnimauxSauvage = new JButton();
@@ -59,12 +60,11 @@ public class VueCours extends JPanel implements Vue {
 		this.add(VocabulaireSport);
 		this.add(VocabulaireTransport);
 		
-		retour.setText("Home");
-		retour.setBounds(20, 20, 138, 36);
+		retour.setBounds(20, 20,80, 79);
 		retour.addActionListener(new ContinuerVersPageDaccueil(m,this));
 		
 		RegleAsLike.setText("AS LIKE");
-		RegleAsLike.setBounds(75, 75, 138, 36);
+		RegleAsLike.setBounds(75, 150, 138, 36);
 		RegleAsLike.addActionListener(new ContinuerVersCoursRegleAsLike(m,this));
 		
 		VocabulaireATable.setText("A table !");

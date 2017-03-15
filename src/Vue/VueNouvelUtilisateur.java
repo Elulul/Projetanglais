@@ -1,10 +1,19 @@
 package Vue;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Controler.*;
+import Controler.ContinuerVersApp;
+import Controler.CreerNouvelUtilisateur;
+import Controler.mouseListener;
 import anglais.Modele;
 
 public class VueNouvelUtilisateur extends JPanel implements Vue{
@@ -13,7 +22,8 @@ public class VueNouvelUtilisateur extends JPanel implements Vue{
 	private JTextField TxtNomUtilisateur= new JTextField();
 	private JTextField Mdp = new JTextField();
 	private JButton Créer = new JButton();
-	JButton Retour = new JButton();
+	JButton Retour = new JButton(new ImageIcon("./images/TestBack.png"));
+	protected BufferedImage image;
 	
 	public VueNouvelUtilisateur(Modele m){
 		this.m = m;
@@ -38,11 +48,22 @@ public class VueNouvelUtilisateur extends JPanel implements Vue{
 		Créer.setText("Sign up");
 		Créer.addActionListener(new CreerNouvelUtilisateur(m,this));
 		
-		Retour.setText("Back");
-		Retour.setBounds(0, 15,150, 40);
+
+		Retour.setBounds(0, 15,80, 80);
 		Retour.addActionListener(new ContinuerVersApp(m,this));
+		Retour.setBorderPainted(false);
+		
+		try {
+			image = ImageIO.read(new File("./images/fondAide.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 
 
 	public void update() {

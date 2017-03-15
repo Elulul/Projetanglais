@@ -3,10 +3,13 @@ package VuePageExo;
 import java.awt.Component;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import ControlerVersPageExo.ContinuerVersPageExo;
 import Vue.Vue;
 import anglais.Modele;
 
@@ -16,12 +19,16 @@ public class VuePageExoVoc extends JPanel implements Vue {
 	
 	ArrayList<ArrayList<Object>> aAfficher = new ArrayList<ArrayList<Object>>();
 	ArrayList<ArrayList<String>> mot = new ArrayList<ArrayList<String>>();
-	
+	private JButton retour = new JButton(new ImageIcon("./images/TestBack.png"));
 	public VuePageExoVoc (Modele m){
 		this.m = m;
 		
 		this.setLayout(null);
 		
+		this.add(retour);
+		retour.setBounds(20, 20, 80, 80);
+		retour.addActionListener(new ContinuerVersPageExo(m,this));
+		retour.setBorderPainted(false);
 		mot = m.getListeVocATable();
 		
 		for(int i=0; i <15 ; i++){
@@ -34,8 +41,8 @@ public class VuePageExoVoc extends JPanel implements Vue {
 				((JLabel) tampon.get(0)).setText(mot.get(i).get(0));
 				this.add(((JLabel) tampon.get(0)));
 				this.add(( JTextField) tampon.get(1));
-				((JLabel) tampon.get(0)).setBounds(20, i*40 + 40, 100, 20);
-				((JTextField) tampon.get(1)).setBounds(150, i*40 + 40, 100, 20);
+				((JLabel) tampon.get(0)).setBounds(200, i*40 + 40, 100, 20);
+				((JTextField) tampon.get(1)).setBounds(350, i*40 + 40, 100, 20);
 			}
 			
 			else{
@@ -46,8 +53,8 @@ public class VuePageExoVoc extends JPanel implements Vue {
 				((JLabel) tampon.get(1)).setText(mot.get(i).get(1));
 				this.add(((JLabel) tampon.get(1)));
 				this.add(( JTextField) tampon.get(0));
-				((JTextField) tampon.get(0)).setBounds(20, i*40 + 40, 100, 20);
-				((JLabel) tampon.get(1)).setBounds(150, i*40 + 40, 100, 20);
+				((JTextField) tampon.get(0)).setBounds(200, i*40 + 40, 100, 20);
+				((JLabel) tampon.get(1)).setBounds(350, i*40 + 40, 100, 20);
 			}
 		}
 	}
