@@ -4,7 +4,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import Controler.ContinuerVersPageDaccueil;
-import ControlerVersCours.ContinuerVersCours;
 import ControlerVersCours.ContinuerVersCoursRegleAsLike;
 import ControlerVersCoursVoc.ContinuerVersCoursVocabulaireATable;
 import ControlerVersCoursVoc.ContinuerVersCoursVocabulaireAnimaux;
