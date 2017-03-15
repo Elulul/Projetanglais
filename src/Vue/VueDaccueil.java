@@ -28,7 +28,7 @@ public class VueDaccueil extends JPanel implements Vue	 {
 	          
 	    	  
 	       } catch (IOException ex) {
-	       
+	    	   ex.printStackTrace();
 	       }
 		
 		this.setLayout(null);
