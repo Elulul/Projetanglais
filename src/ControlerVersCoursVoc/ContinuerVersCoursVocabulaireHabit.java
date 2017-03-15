@@ -1,11 +1,11 @@
-package ControlerVersCours;
+package ControlerVersCoursVoc;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import Vue.Vue;
-import Vuecours.VueCoursVocabulaireHabit;
+import Vuecours.VueCoursVocabulaire;
 import anglais.Modele;
 
 public class ContinuerVersCoursVocabulaireHabit implements ActionListener{
@@ -29,7 +29,7 @@ public class ContinuerVersCoursVocabulaireHabit implements ActionListener{
 	
 	public void action()
 	{
-		VueCoursVocabulaireHabit  vueCVAT = new VueCoursVocabulaireHabit(m);
+		VueCoursVocabulaire  vueCVAT = new VueCoursVocabulaire(m,m.getListeVocHabit());
 		vueCVAT.update();
 	}
 }

@@ -14,7 +14,20 @@ public class Modele {
 
 	private ArrayList<String> CorrectionExoATrouAsLike = new ArrayList<String>() ;
 	private ArrayList<ArrayList<String>> ListeVocATable = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeBricolage = new ArrayList<ArrayList<String>>();
+
+
 	private ArrayList<ArrayList<String>> ListeVocHabit = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocAnimauxSauvage = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocCalendrier = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocMaterielinformatique = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocNourriture = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocNourritureSuite = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocSentiment = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocSport = new ArrayList<ArrayList<String>>();
+	private ArrayList<ArrayList<String>> ListeVocTransport = new ArrayList<ArrayList<String>>();
+	
+	
 	private Fenetre f;
 	
 	
@@ -119,16 +132,187 @@ public class Modele {
 		//Initialisation VocHabit
 		
 		try {
-			this.setListeVocHabit(this.getListVocHabit());
+			this.setListeVocHabit(this.getListVocHabit("./sauvegarde/VocHabit.csv"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//End VocHabit
 		
+		//Initialisation VocAnimauxSauvage
+		try {
+			this.setListeVocAnimauxSauvage(this.getListVocHabit("./sauvegarde/VocAnimauxSauvage.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocAnimauxSauvage
+		
+		//Initialisation VocBricolage
+		
+		try {
+			this.setListeBricolage(this.getListVocHabit("./sauvegarde/VocBricolage.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocBricolage
+		
+		
+		//Initialisation VocCalendrier
+		
+		try {
+			this.setListeVocCalendrier(this.getListVocHabit("./sauvegarde/VocCalendrier.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocCalendrier
+		
+		//Initialisation VocMaterielInformatique
+		try {
+			this.setListeVocMaterielinformatique(this.getListVocHabit("./sauvegarde/VocMaterielInformatique.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocMaterielInformatique
+		
+		//Initialisation VocNourriture
+		try {
+			this.setListeVocNourriture(this.getListVocHabit("./sauvegarde/VocNourriture.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocNourriture
+		
+		//Initialisation VocNourritureSuite
+		try {
+			this.setListeVocNourritureSuite(this.getListVocHabit("./sauvegarde/VocNourritureSuite.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocNourritureSuite
+		
+		//Initialisation VocSentiment
+		try {
+			this.setListeVocSentiment(this.getListVocHabit("./sauvegarde/VocSentiment.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocSentiment
+
+		//Initialisation VocSport
+		try {
+			this.setListeVocSport(this.getListVocHabit("./sauvegarde/VocSport.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocSentiment
+		
+		//Initialisation VocTransport
+		try {
+			this.setListeVocTransport(this.getListVocHabit("./sauvegarde/VocTransport.csv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//End VocSentiment
+		
+		
+		
+		
+		
 		//End Toute les données
+
+		
+	}
+	public ArrayList<ArrayList<String>> getListeBricolage() {
+		return ListeBricolage;
+	}
+
+	public void setListeBricolage(ArrayList<ArrayList<String>> listeBricolage) {
+		ListeBricolage = listeBricolage;
 	}
 	
+	
+	public ArrayList<ArrayList<String>> getListeVocAnimauxSauvage() {
+		return ListeVocAnimauxSauvage;
+	}
+
+	public void setListeVocAnimauxSauvage(ArrayList<ArrayList<String>> listeVocAnimauxSauvage) {
+		ListeVocAnimauxSauvage = listeVocAnimauxSauvage;
+	}
+
+	public ArrayList<ArrayList<String>> getListeVocCalendrier() {
+		return ListeVocCalendrier;
+	}
+
+	public void setListeVocCalendrier(ArrayList<ArrayList<String>> listeVocCalendrier) {
+		ListeVocCalendrier = listeVocCalendrier;
+	}
+
+	public ArrayList<ArrayList<String>> getListeVocMaterielinformatique() {
+		return ListeVocMaterielinformatique;
+	}
+
+	public void setListeVocMaterielinformatique(ArrayList<ArrayList<String>> listeVocMaterielinformatique) {
+		ListeVocMaterielinformatique = listeVocMaterielinformatique;
+	}
+
+	public ArrayList<ArrayList<String>> getListeVocNourriture() {
+		return ListeVocNourriture;
+	}
+
+	public void setListeVocNourriture(ArrayList<ArrayList<String>> listeVocNourriture) {
+		ListeVocNourriture = listeVocNourriture;
+	}
+
+	public ArrayList<ArrayList<String>> getListeVocNourritureSuite() {
+		return ListeVocNourritureSuite;
+	}
+
+	public void setListeVocNourritureSuite(ArrayList<ArrayList<String>> listeVocNourritureSuite) {
+		ListeVocNourritureSuite = listeVocNourritureSuite;
+	}
+
+	public ArrayList<ArrayList<String>> getListeVocSentiment() {
+		return ListeVocSentiment;
+	}
+
+	public void setListeVocSentiment(ArrayList<ArrayList<String>> listeVocSentiment) {
+		ListeVocSentiment = listeVocSentiment;
+	}
+
+	public ArrayList<ArrayList<String>> getListeVocSport() {
+		return ListeVocSport;
+	}
+
+	public void setListeVocSport(ArrayList<ArrayList<String>> listeVocSport) {
+		ListeVocSport = listeVocSport;
+	}
+
+	public ArrayList<ArrayList<String>> getListeVocTransport() {
+		return ListeVocTransport;
+	}
+
+	public void setListeVocTransport(ArrayList<ArrayList<String>> listeVocTransport) {
+		ListeVocTransport = listeVocTransport;
+	}
+
 	public ArrayList<ArrayList<String>> getListeVocHabit() {
 		return ListeVocHabit;
 	}
@@ -218,10 +402,10 @@ public class Modele {
 	}
 	
 
-	public ArrayList<ArrayList<String>> getListVocHabit() throws IOException{
+	public ArrayList<ArrayList<String>> getListVocHabit(String fichier) throws IOException{
 		ArrayList<ArrayList<String> > res = new ArrayList<ArrayList<String>>();
 		ArrayList<String> tampon = new ArrayList<String>();
-		FileReader f = new FileReader("./sauvegarde/VocHabit.csv");
+		FileReader f = new FileReader(fichier);
 		BufferedReader r = new BufferedReader(f);
 		String u;
 		String l = r.readLine();
@@ -233,7 +417,7 @@ public class Modele {
 			Scanner sc = new Scanner(l).useDelimiter(";");
 			tampon = new ArrayList<String>();
 			
-			u = sc.next();;
+			u = sc.next();
 			tampon.add(u);
 			u = sc.next();
 			tampon.add(u);
@@ -242,7 +426,7 @@ public class Modele {
 			l = r.readLine();
 			i++;
 		}
-		affiche(res);
+		
 		return res;
 		
 	}

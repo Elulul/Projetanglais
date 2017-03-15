@@ -10,14 +10,14 @@ import javax.swing.JTextField;
 import Vue.Vue;
 import anglais.Modele;
 
-public class VuePageExoVocATable extends JPanel implements Vue {
+public class VuePageExoVoc extends JPanel implements Vue {
 
 	Modele m;
 	
 	ArrayList<ArrayList<Object>> aAfficher = new ArrayList<ArrayList<Object>>();
 	ArrayList<ArrayList<String>> mot = new ArrayList<ArrayList<String>>();
 	
-	public VuePageExoVocATable (Modele m){
+	public VuePageExoVoc (Modele m){
 		this.m = m;
 		
 		this.setLayout(null);

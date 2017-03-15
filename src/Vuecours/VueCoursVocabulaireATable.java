@@ -2,24 +2,36 @@ package Vuecours;
 
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controler.ContinuerVersPageDaccueil;
 import Vue.Vue;
 import anglais.Modele;
 
 public class VueCoursVocabulaireATable extends JPanel implements Vue{
 
 	Modele m;
+	
 	ArrayList<ArrayList<String>> listeVoc = new  ArrayList<ArrayList<String>>();
 	ArrayList<ArrayList<JLabel>> listeVocAAfficher = new  ArrayList<ArrayList<JLabel>>();
 	
+	JButton retour = new JButton();
 	public VueCoursVocabulaireATable(Modele m){
 		this.m = m;
 		
 		this.iniListeVocAAfficher();
 	
 		this.setLayout(null);
+		
+		this.add(retour);
+		
+		
+		retour.setText("Practice");
+		retour.setBounds(20, 20, 138, 36);
+		retour.addActionListener(new ContinuerVersPageDaccueil(m,this));
+		
 		
 		listeVoc = m.getListeVocATable();
 		

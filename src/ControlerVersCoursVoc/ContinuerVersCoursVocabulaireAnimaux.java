@@ -1,19 +1,20 @@
-package ControlerVersCours;
+package ControlerVersCoursVoc;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import Vuecours.VueCoursRegleAsLike;
+import Vuecours.VueCoursVocabulaire;
 import Vuecours.VueCoursVocabulaireATable;
 import anglais.Modele;
 
-public class ContinuerVersCoursVocabulaireATable implements ActionListener{
+public class ContinuerVersCoursVocabulaireAnimaux implements ActionListener {
 
+	
 	Modele m;
 	Vue v;
 	
-	public ContinuerVersCoursVocabulaireATable (Modele m,Vue v){
+	public ContinuerVersCoursVocabulaireAnimaux (Modele m,Vue v){
 		this.m = m;
 		this.v= v;
 	}
@@ -26,7 +27,7 @@ public class ContinuerVersCoursVocabulaireATable implements ActionListener{
 	
 	public void action()
 	{
-		VueCoursVocabulaireATable  vueCVAT = new VueCoursVocabulaireATable (m);
+		VueCoursVocabulaire  vueCVAT = new VueCoursVocabulaire(m,m.getListeVocAnimauxSauvage());
 		vueCVAT.update();
 	}
 }

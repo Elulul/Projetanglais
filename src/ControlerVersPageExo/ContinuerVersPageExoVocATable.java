@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import VuePageExo.VuePageExoVocATable;
+import VuePageExo.VuePageExoVoc;
 import anglais.Modele;
 
 public class ContinuerVersPageExoVocATable implements ActionListener {
@@ -25,7 +25,7 @@ public class ContinuerVersPageExoVocATable implements ActionListener {
 	
 	public void action()
 	{
-		VuePageExoVocATable vueEATAL = new VuePageExoVocATable(m);
+		VuePageExoVoc vueEATAL = new VuePageExoVoc(m);
 		vueEATAL.update();
 	}
 	
