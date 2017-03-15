@@ -514,6 +514,9 @@ public class Modele {
 		return res;
 	}
 	
+
+	
+	
 	public static void affiche(ArrayList<ArrayList<String>> t){
 		for (int i= 0 ; i<t.size();i++){
 			for(int j =0 ; j < t.get(i).size();j++){
@@ -521,6 +524,7 @@ public class Modele {
 			}
 		}
 	}
+	
 	
 	// Fin Voltaire
 	

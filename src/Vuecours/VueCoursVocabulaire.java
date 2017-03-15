@@ -37,7 +37,7 @@ public class VueCoursVocabulaire extends JPanel implements Vue {
 		retour.addActionListener(new ContinuerVersCours(m,this));
 		
 		this.listeVoc = listeVoc ;//m.getListeVocHabit();
-		System.out.println(listeVoc.size());
+		
 		for (int i =0; i < 15;i++){
 			listeVocAAfficher.get(i).get(0).setText(listeVoc.get(i).get(0) + " :");
 			listeVocAAfficher.get(i).get(0).setBounds(220, 40*i +40, 200, 20);
