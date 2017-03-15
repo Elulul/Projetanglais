@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -22,9 +23,9 @@ public class VueConnexion extends JPanel implements Vue{
 	Modele m;
 	private JTextField TxtNomUtilisateur= new JTextField();
 	private JPasswordField Mdp = new JPasswordField();
-	private JButton Connexion = new JButton();
-	private JButton Help = new JButton();
-	private JButton NouvelUtilisateur = new JButton();
+	private JButton Connexion = new JButton(new ImageIcon ("./images/TestSignIN.png"));
+	private JButton Help = new JButton(new ImageIcon ("./images/Help.png"));
+	private JButton NouvelUtilisateur = new JButton(new ImageIcon ("./images/TestNewUser.png"));
 	private BufferedImage image;
 	
 	public VueConnexion(Modele m){
@@ -52,17 +53,15 @@ public class VueConnexion extends JPanel implements Vue{
 		Mdp.setBounds(530, 275, 160, 25);
 		Mdp.addMouseListener(new mouseListener(Mdp));
 		
-		Connexion.setBounds(725, 275, 100, 25);
-		Connexion.setText("Sign In");
+		Connexion.setBounds(725, 275, 147, 25);
 		Connexion.addActionListener(new SeConnecter(m,this));
 		
-		Help.setText("Help");
-		Help.setBounds(1150, 10, 100, 35);
+		Help.setBounds(1170, 10, 80, 74);
 		Help.addActionListener(new ContinuerVersPageAideDeVueCo(m,this));
+		Help.setBorderPainted(false);
 		
 		
-		NouvelUtilisateur.setText("New User");
-		NouvelUtilisateur.setBounds(835, 275, 100, 25);
+		NouvelUtilisateur.setBounds(882, 275, 147, 25);
 		NouvelUtilisateur.addActionListener(new ContinuerVersNouvelUtilisateur(m,this));
 	}
 	

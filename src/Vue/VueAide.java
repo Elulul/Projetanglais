@@ -21,7 +21,7 @@ public class VueAide extends JPanel implements Vue{
 		this.add(Retour);
 		
 		TexteAide.setText("In order to connect, please press the 'New User' button then choose a username and a password and click on 'Sign Up'.");
-		TexteAide2.setText("Once you are registered, you can log in using the username and the password you chose earlier by pressing the 'Connect' button.");
+		TexteAide2.setText("Once you are registered, you can sign in using the username and the password you chose earlier by pressing the 'Sign in' button.");
 		TexteAide.setBounds(250, 250,800, 100);
 		TexteAide2.setBounds(250, 265,800, 100);
 		Retour.setText("Back");
