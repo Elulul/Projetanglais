@@ -221,7 +221,7 @@ public class Modele {
 	public ArrayList<ArrayList<String>> getListVocHabit() throws IOException{
 		ArrayList<ArrayList<String> > res = new ArrayList<ArrayList<String>>();
 		ArrayList<String> tampon = new ArrayList<String>();
-		FileReader f = new FileReader("C:/Users/lulu/Desktop/Workplace/Projetanglais/sauvegarde/VocHabit.csv");
+		FileReader f = new FileReader("./sauvegarde/VocHabit.csv");
 		BufferedReader r = new BufferedReader(f);
 		String u;
 		String l = r.readLine();
