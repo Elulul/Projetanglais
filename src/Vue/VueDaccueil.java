@@ -50,8 +50,7 @@ public class VueDaccueil extends JPanel implements Vue	 {
 		m.getFenetre().revalidate();
 	}
 	protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        //g.drawImage(image, 0, 0, this); 
+        super.paintComponent(g); 
         g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
     }
 }

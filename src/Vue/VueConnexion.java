@@ -1,20 +1,31 @@
 package Vue;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import Controler.*;
+import Controler.ContinuerVersNouvelUtilisateur;
+import Controler.ContinuerVersPageAideDeVueCo;
+import Controler.SeConnecter;
+import Controler.mouseListener;
 import anglais.Modele;
 
 public class VueConnexion extends JPanel implements Vue{
 
 	Modele m;
 	private JTextField TxtNomUtilisateur= new JTextField();
-	private JTextField Mdp = new JTextField();
+	private JPasswordField Mdp = new JPasswordField();
 	private JButton Connexion = new JButton();
 	private JButton Help = new JButton();
 	private JButton NouvelUtilisateur = new JButton();
+	private BufferedImage image;
 	
 	public VueConnexion(Modele m){
 		this.m = m;
@@ -26,18 +37,23 @@ public class VueConnexion extends JPanel implements Vue{
 		this.add(Mdp);
 		this.add(Help);
 		this.add(NouvelUtilisateur);
+		try {
+			 
+	          image = ImageIO.read(new File("./images/motivation1.jpg"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	       
+	       }
 		
-		
-		TxtNomUtilisateur.setText("User");
-		TxtNomUtilisateur.setBounds(575, 225, 125, 35);
+		TxtNomUtilisateur.setBounds(530, 225, 160, 25);
 		TxtNomUtilisateur.addMouseListener(new mouseListener(TxtNomUtilisateur));
 
-		Mdp.setText("Password");
-		Mdp.setBounds(575, 300, 125, 35);
+		Mdp.setBounds(530, 275, 160, 25);
 		Mdp.addMouseListener(new mouseListener(Mdp));
 		
-		Connexion.setBounds(975, 500, 150, 50);
-		Connexion.setText("Connect");
+		Connexion.setBounds(725, 275, 100, 25);
+		Connexion.setText("Sign In");
 		Connexion.addActionListener(new SeConnecter(m,this));
 		
 		Help.setText("Help");
@@ -46,7 +62,7 @@ public class VueConnexion extends JPanel implements Vue{
 		
 		
 		NouvelUtilisateur.setText("New User");
-		NouvelUtilisateur.setBounds(975, 600, 150, 50);
+		NouvelUtilisateur.setBounds(835, 275, 100, 25);
 		NouvelUtilisateur.addActionListener(new ContinuerVersNouvelUtilisateur(m,this));
 	}
 	
@@ -64,4 +80,8 @@ public class VueConnexion extends JPanel implements Vue{
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }
