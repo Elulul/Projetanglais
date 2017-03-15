@@ -32,7 +32,7 @@ public class VueCoursVocabulaire extends JPanel implements Vue {
 		this.add(retour);
 		
 		
-		retour.setText("Practice");
+		retour.setText("Lesson");
 		retour.setBounds(20, 20, 138, 36);
 		retour.addActionListener(new ContinuerVersCours(m,this));
 		

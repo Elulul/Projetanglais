@@ -44,7 +44,7 @@ public class VueConnexion extends JPanel implements Vue{
 	          
 	    	  
 	       } catch (IOException ex) {
-	       
+	    	   ex.printStackTrace();
 	       }
 		
 		TxtNomUtilisateur.setBounds(530, 225, 160, 25);
