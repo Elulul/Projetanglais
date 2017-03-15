@@ -1,5 +1,6 @@
 package VuePageExo;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -19,7 +20,7 @@ public class VuePageExo extends JPanel implements Vue{
 	private JButton exoATrou = new JButton();
 	private JButton exoVocATable = new JButton();
 	private JButton exoVoltaire= new JButton();
-	private JButton Home = new JButton();
+	private JButton Home = new JButton(new ImageIcon("./images/Home.png"));
 	
 	
 	
@@ -39,8 +40,8 @@ public class VuePageExo extends JPanel implements Vue{
 		
 		this.setLayout(null);
 		
-		Home.setText("Home");
-		Home.setBounds(20, 20, 138, 36);
+		
+		Home.setBounds(20, 20, 80, 79);
 		Home.addActionListener(new ContinuerVersPageDaccueil(m,this));
 		
 		this.add(exoATrou);
@@ -111,11 +112,11 @@ public class VuePageExo extends JPanel implements Vue{
 		exoATrou.addActionListener(new ContinuerVersPageExoATrou(m,this));
 		
 		exoVocATable.setText("A table !");
-		exoVocATable.setBounds(800,150, 225, 35);
+		exoVocATable.setBounds(800,350, 225, 35);
 		exoVocATable.addActionListener(new ContinuerVersPageExoVocATable(m,this));
 		
 		exoVoltaire.setText("ExoVoltaire");
-		exoVoltaire.setBounds(15,70, 225, 35);
+		exoVoltaire.setBounds(15,150, 225, 35);
 		exoVoltaire.addActionListener(new ContinuerVersPageExoVoltaire(m,this));
 	}
 	

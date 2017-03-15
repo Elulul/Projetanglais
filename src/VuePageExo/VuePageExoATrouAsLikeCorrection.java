@@ -3,6 +3,7 @@ package VuePageExo;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -55,7 +56,7 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 	private JLabel phrase10deb = new JLabel();
 	private JLabel phrase10fin = new JLabel();
 
-	private JButton retourAccueil = new JButton();
+	private JButton retourAccueil = new JButton(new ImageIcon("./images/Home.png"));
 	
 	
 	
@@ -206,8 +207,8 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 		
 		}
 		
-		retourAccueil.setText("Home");
-		retourAccueil.setBounds(1000, 600, 125, 35);
+
+		retourAccueil.setBounds(1000, 600, 80, 79);
 		retourAccueil.addActionListener(new ContinuerVersPageDaccueil(m,this));
 	
 	}

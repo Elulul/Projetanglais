@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,7 +17,7 @@ import anglais.Modele;
 public class VueCoursVocabulaire extends JPanel implements Vue {
 	
 	Modele m;
-	JButton retour = new JButton();
+	JButton retour = new JButton(new ImageIcon("./images/TestBack.png"));
 	ArrayList<ArrayList<String>> listeVoc = new  ArrayList<ArrayList<String>>();
 	ArrayList<ArrayList<JLabel>> listeVocAAfficher = new  ArrayList<ArrayList<JLabel>>();
 	Font f2 = new Font("Serif", Font.PLAIN, 20);
@@ -32,9 +33,11 @@ public class VueCoursVocabulaire extends JPanel implements Vue {
 		this.add(retour);
 		
 		
-		retour.setText("Home");
-		retour.setBounds(20, 20, 138, 36);
+
+		retour.setBounds(20, 20, 80, 80);
+
 		retour.addActionListener(new ContinuerVersCours(m,this));
+		retour.setBorderPainted(false);
 		
 		this.listeVoc = listeVoc ;//m.getListeVocHabit();
 		
