@@ -2,7 +2,6 @@ package VuePageExo;
 
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,15 +13,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExo.ContinuerVersPageExoVoltaireCorrection;
-import ControlerVersPageExo.recupererPosVoltaire;
+import ControlerVersPageExo.ContinuerVersPageExoVoltaireCorrection2;
+import ControlerVersPageExo.recupererPosVoltaire2;
 import Vue.Vue;
 import anglais.Modele;
 
-public class VuePageExoVoltaire extends JPanel implements Vue{
+public class VuePageExoVoltaire2 extends JPanel implements Vue {
 
 	Modele m;
-	String maphras = " I is sleeping in my room.";
+	String maphras = " I am sleeping in my room.";
 	JLabel maphrase = new JLabel();
 	private JButton retour= new JButton(new ImageIcon("./images/TestBack.png"));
 	private JButton pasErreur= new JButton();
@@ -31,7 +30,7 @@ public class VuePageExoVoltaire extends JPanel implements Vue{
 
 	 
 
-	public VuePageExoVoltaire(Modele m){
+	public VuePageExoVoltaire2(Modele m){
 		this.m = m;
 		try {
 			 
@@ -50,17 +49,17 @@ public class VuePageExoVoltaire extends JPanel implements Vue{
 		retour.setBorderPainted(false);
 		
 		this.add(maphrase);
-		maphrase.setText("I is sleeping in my room.");
+		maphrase.setText("I am sleeping in my room.");
 		maphrase.setBounds(450, 300,800, 50);
 		maphrase.setBackground(null);
-		maphrase.addMouseListener(new recupererPosVoltaire(m,this));
+		maphrase.addMouseListener(new recupererPosVoltaire2(m,this));
 		maphrase.setFont(f);
 		
 		
 		this.add(pasErreur);
 		pasErreur.setText("There are no mistakes");
 		pasErreur.setBounds(520, 450,300, 50);
-		pasErreur.addActionListener(new ContinuerVersPageExoVoltaireCorrection(m,this));
+		pasErreur.addActionListener(new ContinuerVersPageExoVoltaireCorrection2(m,this));
 		}
 	
 	
@@ -80,3 +79,5 @@ public class VuePageExoVoltaire extends JPanel implements Vue{
         g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
     }
 }
+	
+

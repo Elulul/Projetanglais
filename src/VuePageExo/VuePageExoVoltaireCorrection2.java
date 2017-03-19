@@ -14,11 +14,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExo.ContinuerVersPageExoVoltaire2;
+import ControlerVersPageExo.ContinuerVersPageExoVoltaire3;
 import Vue.Vue;
 import anglais.Modele;
 
-public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
+public class VuePageExoVoltaireCorrection2 extends JPanel implements Vue  {
 
 	Modele m;
 	boolean trouve;
@@ -34,7 +34,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 	Font f2 = new Font("Serif", Font.PLAIN, 20); 
 	private BufferedImage image;
 
-		public VuePageExoVoltaireCorrection(Modele m,boolean trouve,boolean pasdefaute,boolean click){
+		public VuePageExoVoltaireCorrection2(Modele m,boolean trouve,boolean pasdefaute,boolean click){
 			this.m = m;
 			this.trouve = trouve;
 			this.pasdefaute = pasdefaute;
@@ -50,17 +50,11 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 		       } catch (IOException ex) {
 		    	   ex.printStackTrace();
 		       }
-			
+			this.add(next);
 			this.add(debut);
 			this.add(motatrouver);
 			this.add(fin);
 			this.add(retour);
-			this.add(next);
-			
-			next.setText("Next");
-			next.setBounds(1000, 650, 100, 60);
-			next.addActionListener(new ContinuerVersPageExoVoltaire2(m,this));
-			
 			retour.setBounds(20, 20, 80, 80);
 			retour.addActionListener(new ContinuerVersPageExo(m,this));
 			retour.setBorderPainted(false);
@@ -71,16 +65,18 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 			debut.setFont(f);
 			
 			
-			motatrouver.setText("is");
+			motatrouver.setText("am");
 			motatrouver.setBounds(470, 300,50, 50);
 			motatrouver.setFont(f);
 			
-			
+			next.setText("Next");
+			next.setBounds(1000, 650, 100, 60);
+			next.addActionListener(new ContinuerVersPageExoVoltaire3(m,this));
 				
 			
 				if(click && pasdefaute){
 					this.add(nofaute);
-					nofaute.setText("There is no mistake in this sentence");
+					nofaute.setText("There were no mistakes in this sentence");
 					nofaute.setBounds(500, 400,400, 50);
 					nofaute.setFont(f2);
 				}
@@ -125,7 +121,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 			
 			
 			fin.setText("sleeping in my room.");
-			fin.setBounds(502, 300,350, 50);
+			fin.setBounds(522, 300,350, 50);
 			fin.setFont(f);
 			}
 		
@@ -139,4 +135,5 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 	        super.paintComponent(g); 
 	        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
 	    }
+	
 }
