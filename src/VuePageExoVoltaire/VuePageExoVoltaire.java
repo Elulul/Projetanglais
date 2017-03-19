@@ -2,7 +2,6 @@ package VuePageExoVoltaire;
 
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;

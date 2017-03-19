@@ -40,7 +40,7 @@ public class VueCours extends JPanel implements Vue {
 	private JButton RegleAsLike = new JButton();
 	private JButton Present = new JButton();
 	private JButton RegleAnA = new JButton();
-	private JButton AuxilièreBe = new JButton();
+	private JButton AuxiliaireBe = new JButton();
 	private JButton Passe = new JButton();
 	private JButton Passe2 = new JButton();
 	private JButton Future = new JButton();
@@ -67,7 +67,7 @@ public class VueCours extends JPanel implements Vue {
 		this.add(retour);
 		this.add(RegleAsLike);
 		this.add(RegleAnA);
-		this.add(AuxilièreBe);
+		this.add(AuxiliaireBe);
 		this.add(Present);
 		this.add(Passe);
 		this.add(Passe2);
@@ -94,6 +94,7 @@ public class VueCours extends JPanel implements Vue {
 	       }
 		
 		retour.setBounds(20, 20,80, 79);
+		retour.setBorderPainted(false);
 		retour.addActionListener(new ContinuerVersPageDaccueil(m,this));
 		
 		
@@ -104,37 +105,49 @@ public class VueCours extends JPanel implements Vue {
 		RegleAsLike.setBounds(65, 170, 118, 28);
 		RegleAsLike.addActionListener(new ContinuerVersCoursRegleAsLike(m,this));
 		
-		RegleAnA.setText("rule A / AN");
-		RegleAnA.setBounds(65, 210, 150, 28);
+		RegleAnA.setContentAreaFilled(false);
+		RegleAnA.setBorderPainted(false);
+		RegleAnA.setBounds(100, 207, 72, 23);
 		RegleAnA.addActionListener(new ContinuerVersCoursAnA(m,this));
 		
-		AuxilièreBe.setText("Auxiliary Verb Be");
-		AuxilièreBe.setBounds(65, 250, 150, 28);
-		AuxilièreBe.addActionListener(new ContinuerVersCoursAuxiliaireBe(m,this));
+
+		AuxiliaireBe.setText("Auxiliary Verb Be");
+		AuxiliaireBe.setBounds(65, 250, 150, 28);
+		AuxiliaireBe.addActionListener(new ContinuerVersCoursAuxiliaireBe(m,this));
+
+		AuxiliaireBe.setContentAreaFilled(false);
+		AuxiliaireBe.setBorderPainted(false);
+		AuxiliaireBe.setBounds(15, 240,238, 60);
+		AuxiliaireBe.addActionListener(new ContinuerVersCoursAnA(m,this));
+
 		
-		Passe.setText("Past");
-		Passe.setBounds(65, 290, 150, 28);
+		Passe.setContentAreaFilled(false);
+		Passe.setBorderPainted(false);
+		Passe.setBounds(65, 311, 143, 22);
 		Passe.addActionListener(new ContinuerVersCoursPasse(m,this));
 		
 		
-		Passe2.setText("Past (Part2)");
-		Passe2.setBounds(65, 330, 150, 28);
+		Passe2.setContentAreaFilled(false);
+		Passe2.setBorderPainted(false);
+		Passe2.setBounds(5, 343, 265, 28);
 		Passe2.addActionListener(new ContinuerVersCoursPasse2(m,this));
 		
-		Future.setText("Future");
-		Future.setBounds(65, 370, 150, 28);
+		Future.setContentAreaFilled(false);
+		Future.setBorderPainted(false);
+		Future.setBounds(80, 380, 115, 25);
 		Future.addActionListener(new ContinuerVersCoursFuture(m,this));
 		
-		Present.setText("Present");
-		Present.setBounds(65, 410, 150, 28);
+		Present.setContentAreaFilled(false);
+		Present.setBorderPainted(false);
+		Present.setBounds(68, 415, 135, 23);
 		Present.addActionListener(new ContinuerVersCoursPresent(m,this));
 		
 		
 		
-		VocabulaireATable.setContentAreaFilled(false);
-		VocabulaireATable.setBorderPainted(false);
-		VocabulaireATable.setBounds(1018, 614, 236, 29);
-		VocabulaireATable.addActionListener(new ContinuerVersCoursVocabulaireATable(m,this));
+//		VocabulaireATable.setContentAreaFilled(false);
+//		VocabulaireATable.setBorderPainted(false);
+//		VocabulaireATable.setBounds(1018, 614, 236, 29);
+//		VocabulaireATable.addActionListener(new ContinuerVersCoursVocabulaireATable(m,this));
 		
 		VocabulaireHabit.setContentAreaFilled(false);
 		VocabulaireHabit.setBorderPainted(false);
