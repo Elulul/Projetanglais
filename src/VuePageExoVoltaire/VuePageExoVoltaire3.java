@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
 import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaireCorrection3;
-import ControlerVersPageExoVoltaire.recupererPosVoltaire4;
+import ControlerVersPageExoVoltaire.recupererPosVoltaire3;
 import Vue.Vue;
 import anglais.Modele;
 
@@ -52,7 +52,7 @@ public class VuePageExoVoltaire3 extends JPanel implements Vue {
 		maphrase.setText("When I was young, I use to sleep alone");
 		maphrase.setBounds(450, 300,800, 50);
 		maphrase.setBackground(null);
-		maphrase.addMouseListener(new recupererPosVoltaire4(m,this));
+		maphrase.addMouseListener(new recupererPosVoltaire3(m,this));
 		maphrase.setFont(f);
 		
 		
