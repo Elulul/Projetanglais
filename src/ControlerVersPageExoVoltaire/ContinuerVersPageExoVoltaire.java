@@ -1,19 +1,18 @@
-package ControlerVersPageExo;
+package ControlerVersPageExoVoltaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import VuePageExo.VuePageExoVoltaire3;
+import VuePageExoVoltaire.VuePageExoVoltaire;
 import anglais.Modele;
 
-public class ContinuerVersPageExoVoltaire3 implements ActionListener{
-
+public class ContinuerVersPageExoVoltaire implements ActionListener{
 
 	Modele m;
 	Vue v;
 	
-	public ContinuerVersPageExoVoltaire3(Modele m,Vue v){
+	public ContinuerVersPageExoVoltaire(Modele m,Vue v){
 		this.m = m;
 		this.v= v;
 	}
@@ -26,8 +25,7 @@ public class ContinuerVersPageExoVoltaire3 implements ActionListener{
 	
 	public void action()
 	{
-		VuePageExoVoltaire3 vueEATAL = new VuePageExoVoltaire3(m);
+		VuePageExoVoltaire vueEATAL = new VuePageExoVoltaire(m);
 		vueEATAL.update();
 	}
-	
 }

@@ -1,4 +1,4 @@
-package VuePageExo;
+package VuePageExoVoltaire;
 
 import java.awt.Font;
 import java.awt.Graphics;
@@ -13,12 +13,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExo.ContinuerVersPageExoVoltaireCorrection2;
-import ControlerVersPageExo.recupererPosVoltaire2;
+import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaireCorrection2;
+import ControlerVersPageExoVoltaire.recupererPosVoltaire3;
 import Vue.Vue;
 import anglais.Modele;
 
-public class VuePageExoVoltaire2 extends JPanel implements Vue {
+public class VuePageExoVoltaire3 extends JPanel implements Vue {
 
 	Modele m;
 	String maphras = " I am sleeping in my room.";
@@ -30,7 +30,7 @@ public class VuePageExoVoltaire2 extends JPanel implements Vue {
 
 	 
 
-	public VuePageExoVoltaire2(Modele m){
+	public VuePageExoVoltaire3(Modele m){
 		this.m = m;
 		try {
 			 
@@ -49,16 +49,16 @@ public class VuePageExoVoltaire2 extends JPanel implements Vue {
 		retour.setBorderPainted(false);
 		
 		this.add(maphrase);
-		maphrase.setText("I am sleeping in my room.");
+		maphrase.setText("When I was young, I use to sleep alone");
 		maphrase.setBounds(450, 300,800, 50);
 		maphrase.setBackground(null);
-		maphrase.addMouseListener(new recupererPosVoltaire2(m,this));
+		maphrase.addMouseListener(new recupererPosVoltaire3(m,this));
 		maphrase.setFont(f);
 		
 		
 		this.add(pasErreur);
 		pasErreur.setText("There are no mistakes");
-		pasErreur.setBounds(520, 450,300, 50);
+		pasErreur.setBounds(520, 450,300,50);
 		pasErreur.addActionListener(new ContinuerVersPageExoVoltaireCorrection2(m,this));
 		}
 	
@@ -78,6 +78,5 @@ public class VuePageExoVoltaire2 extends JPanel implements Vue {
         super.paintComponent(g); 
         g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
     }
-}
 	
-
+}

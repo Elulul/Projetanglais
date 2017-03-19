@@ -1,20 +1,19 @@
-package ControlerVersPageExo;
+package ControlerVersPageExoVoltaire;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import Vue.Vue;
-import VuePageExo.VuePageExoVoltaire;
-import VuePageExo.VuePageExoVoltaireCorrection;
+import VuePageExoVoltaire.VuePageExoVoltaireCorrection3;
 import anglais.Modele;
 
-public class recupererPosVoltaire implements MouseListener {
+public class recupererPosVoltaire3 implements MouseListener {
 
 	Modele m;
 	Vue v;
 	boolean trouve;
 	
-	public recupererPosVoltaire(Modele m, Vue v){
+	public recupererPosVoltaire3(Modele m, Vue v){
 		this.v = v;
 		this.m = m;
 	}
@@ -53,12 +52,19 @@ public class recupererPosVoltaire implements MouseListener {
 		System.out.println(arg0.getY());
 		int xa = arg0.getX();
 		int ya = arg0.getY();
-		System.out.println((m.appartientRect(19, 62, 16, 45, xa, ya)));
 		
-		trouve = m.aTrouverLaRepSansBoutton(false, m.appartientRect(19, 62, 16,45, xa, ya), 19, 62, 16, 45, xa, ya);
+		
+		
+	
+		
+		
+		System.out.println((m.appartientRect(298, 367, 15, 43, xa, ya)));
+		
+		trouve = m.aTrouverLaRepSansBoutton(false, (m.appartientRect(298, 367, 15, 43, xa, ya)), 298, 367, 15, 43, xa, ya);
 
 		
-		VuePageExoVoltaireCorrection vueEATAL = new VuePageExoVoltaireCorrection(m,trouve,false,true);// m.getyapasdefaute a faire
+		VuePageExoVoltaireCorrection3 vueEATAL = new VuePageExoVoltaireCorrection3(m,trouve,false,true);// m.getyapasdefaute a faire
 		vueEATAL.update();
 	}
+	
 }

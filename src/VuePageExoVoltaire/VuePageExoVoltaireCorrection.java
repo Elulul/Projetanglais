@@ -1,4 +1,4 @@
-package VuePageExo;
+package VuePageExoVoltaire;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExo.ContinuerVersPageExoVoltaire2;
+import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaire2;
 import Vue.Vue;
 import anglais.Modele;
 

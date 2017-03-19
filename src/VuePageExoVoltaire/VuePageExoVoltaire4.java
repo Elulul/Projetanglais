@@ -1,4 +1,4 @@
-package VuePageExo;
+package VuePageExoVoltaire;
 
 import java.awt.Font;
 import java.awt.Graphics;
@@ -13,15 +13,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExo.ContinuerVersPageExoVoltaireCorrection2;
-import ControlerVersPageExo.recupererPosVoltaire2;
+import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaireCorrection2;
+import ControlerVersPageExoVoltaire.recupererPosVoltaire3;
 import Vue.Vue;
 import anglais.Modele;
 
-public class VuePageExoVoltaire3 extends JPanel implements Vue {
+public class VuePageExoVoltaire4 extends JPanel implements Vue{
 
 	Modele m;
-	String maphras = " I am sleeping in my room.";
+	String maphras = " He has met her yesterday.";
 	JLabel maphrase = new JLabel();
 	private JButton retour= new JButton(new ImageIcon("./images/TestBack.png"));
 	private JButton pasErreur= new JButton();
@@ -30,7 +30,7 @@ public class VuePageExoVoltaire3 extends JPanel implements Vue {
 
 	 
 
-	public VuePageExoVoltaire3(Modele m){
+	public VuePageExoVoltaire4(Modele m){
 		this.m = m;
 		try {
 			 
@@ -49,10 +49,10 @@ public class VuePageExoVoltaire3 extends JPanel implements Vue {
 		retour.setBorderPainted(false);
 		
 		this.add(maphrase);
-		maphrase.setText("When I was young, I used to sleep alone");
+		maphrase.setText("He has met her yesterday");
 		maphrase.setBounds(450, 300,800, 50);
 		maphrase.setBackground(null);
-		maphrase.addMouseListener(new recupererPosVoltaire2(m,this));
+		maphrase.addMouseListener(new recupererPosVoltaire3(m,this));
 		maphrase.setFont(f);
 		
 		

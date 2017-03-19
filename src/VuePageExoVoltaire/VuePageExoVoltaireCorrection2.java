@@ -1,4 +1,4 @@
-package VuePageExo;
+package VuePageExoVoltaire;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExo.ContinuerVersPageExoVoltaire3;
+import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaire3;
 import Vue.Vue;
 import anglais.Modele;
 
@@ -103,7 +103,7 @@ public class VuePageExoVoltaireCorrection2 extends JPanel implements Vue  {
 				if(!click && pasdefaute){
 					this.add(nofaute);
 					nofaute.setText("Congratulations ! There were no mistakes in the sentence");
-					nofaute.setBounds(500, 400,400, 50);
+					nofaute.setBounds(500, 400,800, 50);
 					nofaute.setFont(f2);
 				}
 				

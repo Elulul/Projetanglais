@@ -15,7 +15,7 @@ import ControlerVersPageExo.ContinuerVersPageExoATrou;
 import ControlerVersPageExo.ContinuerVersPageExoATrouAsLike;
 import ControlerVersPageExo.ContinuerVersPageExoVoc;
 import ControlerVersPageExo.ContinuerVersPageExoVocATable;
-import ControlerVersPageExo.ContinuerVersPageExoVoltaire;
+import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaire;
 import Vue.Vue;
 import anglais.Modele;
 

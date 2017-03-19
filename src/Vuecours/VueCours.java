@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import Controler.ContinuerVersPageDaccueil;
 import ControlerVersCours.ContinuerVersCoursAnA;
+import ControlerVersCours.ContinuerVersCoursAuxiliaireBe;
 import ControlerVersCours.ContinuerVersCoursFuture;
 import ControlerVersCours.ContinuerVersCoursPasse;
 import ControlerVersCours.ContinuerVersCoursPasse2;
@@ -109,7 +110,7 @@ public class VueCours extends JPanel implements Vue {
 		
 		AuxilièreBe.setText("Auxiliary Verb Be");
 		AuxilièreBe.setBounds(65, 250, 150, 28);
-		AuxilièreBe.addActionListener(new ContinuerVersCoursAnA(m,this));
+		AuxilièreBe.addActionListener(new ContinuerVersCoursAuxiliaireBe(m,this));
 		
 		Passe.setText("Past");
 		Passe.setBounds(65, 290, 150, 28);

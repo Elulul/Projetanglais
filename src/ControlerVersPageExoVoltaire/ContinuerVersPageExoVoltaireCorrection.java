@@ -1,10 +1,10 @@
-package ControlerVersPageExo;
+package ControlerVersPageExoVoltaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import VuePageExo.VuePageExoVoltaireCorrection;
+import VuePageExoVoltaire.VuePageExoVoltaireCorrection;
 import anglais.Modele;
 
 public class ContinuerVersPageExoVoltaireCorrection implements ActionListener {

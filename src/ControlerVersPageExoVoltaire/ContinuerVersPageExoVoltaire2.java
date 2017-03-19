@@ -1,10 +1,10 @@
-package ControlerVersPageExo;
+package ControlerVersPageExoVoltaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import VuePageExo.VuePageExoVoltaire2;
+import VuePageExoVoltaire.VuePageExoVoltaire2;
 import anglais.Modele;
 
 public class ContinuerVersPageExoVoltaire2 implements ActionListener{
