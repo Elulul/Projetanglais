@@ -11,6 +11,11 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import Controler.ContinuerVersPageDaccueil;
+import ControlerVersCours.ContinuerVersCoursAnA;
+import ControlerVersCours.ContinuerVersCoursFuture;
+import ControlerVersCours.ContinuerVersCoursPasse;
+import ControlerVersCours.ContinuerVersCoursPasse2;
+import ControlerVersCours.ContinuerVersCoursPresent;
 import ControlerVersCours.ContinuerVersCoursRegleAsLike;
 import ControlerVersCoursVoc.ContinuerVersCoursVocabulaireATable;
 import ControlerVersCoursVoc.ContinuerVersCoursVocabulaireAnimaux;
@@ -32,7 +37,12 @@ public class VueCours extends JPanel implements Vue {
 	
 	private JButton retour = new JButton(new ImageIcon("./images/Home.png"));
 	private JButton RegleAsLike = new JButton();
+	private JButton Present = new JButton();
 	private JButton RegleAnA = new JButton();
+	private JButton AuxilièreBe = new JButton();
+	private JButton Passe = new JButton();
+	private JButton Passe2 = new JButton();
+	private JButton Future = new JButton();
 	private JButton VocabulaireATable = new JButton();
 	private JButton VocabulaireAnimauxSauvage = new JButton();
 	private JButton VocabulaireBricolage = new JButton();
@@ -56,6 +66,11 @@ public class VueCours extends JPanel implements Vue {
 		this.add(retour);
 		this.add(RegleAsLike);
 		this.add(RegleAnA);
+		this.add(AuxilièreBe);
+		this.add(Present);
+		this.add(Passe);
+		this.add(Passe2);
+		this.add(Future);
 		this.add(VocabulaireATable);
 		this.add(VocabulaireHabit);
 		this.add(VocabulaireAnimauxSauvage);
@@ -80,10 +95,40 @@ public class VueCours extends JPanel implements Vue {
 		retour.setBounds(20, 20,80, 79);
 		retour.addActionListener(new ContinuerVersPageDaccueil(m,this));
 		
+		
+		
+		
 		RegleAsLike.setContentAreaFilled(false);
 		RegleAsLike.setBorderPainted(false);
 		RegleAsLike.setBounds(65, 170, 118, 28);
 		RegleAsLike.addActionListener(new ContinuerVersCoursRegleAsLike(m,this));
+		
+		RegleAnA.setText("rule A / AN");
+		RegleAnA.setBounds(65, 210, 150, 28);
+		RegleAnA.addActionListener(new ContinuerVersCoursAnA(m,this));
+		
+		AuxilièreBe.setText("Auxiliary Verb Be");
+		AuxilièreBe.setBounds(65, 250, 150, 28);
+		AuxilièreBe.addActionListener(new ContinuerVersCoursAnA(m,this));
+		
+		Passe.setText("Past");
+		Passe.setBounds(65, 290, 150, 28);
+		Passe.addActionListener(new ContinuerVersCoursPasse(m,this));
+		
+		
+		Passe2.setText("Past (Part2)");
+		Passe2.setBounds(65, 330, 150, 28);
+		Passe2.addActionListener(new ContinuerVersCoursPasse2(m,this));
+		
+		Future.setText("Future");
+		Future.setBounds(65, 370, 150, 28);
+		Future.addActionListener(new ContinuerVersCoursFuture(m,this));
+		
+		Present.setText("Present");
+		Present.setBounds(65, 410, 150, 28);
+		Present.addActionListener(new ContinuerVersCoursPresent(m,this));
+		
+		
 		
 		VocabulaireATable.setContentAreaFilled(false);
 		VocabulaireATable.setBorderPainted(false);
