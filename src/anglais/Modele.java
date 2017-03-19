@@ -13,6 +13,8 @@ import java.util.Scanner;
 public class Modele {
 
 	private ArrayList<String> CorrectionExoATrouAsLike = new ArrayList<String>() ;
+
+	public ArrayList<String> CorrectionExoATrouPasse = new ArrayList<String>() ;
 	private ArrayList<ArrayList<String>> ListeVocATable = new ArrayList<ArrayList<String>>();
 	private ArrayList<ArrayList<String>> ListeBricolage = new ArrayList<ArrayList<String>>();
 
@@ -38,6 +40,20 @@ public class Modele {
 		
 		// Initialisation de la liste contenant les reponses de l'exercice AS LIKE 
 		
+		CorrectionExoATrouPasse.add(0,"IS");
+		CorrectionExoATrouPasse.add(1," IS OPENING");
+		CorrectionExoATrouPasse.add(2,"WOULD RUN");
+		CorrectionExoATrouPasse.add(3,"WON");
+		CorrectionExoATrouPasse.add(4,"HAVE NEVER SWUM");
+		CorrectionExoATrouPasse.add(5,"HAD BEEN");
+		CorrectionExoATrouPasse.add(6,"PLAYED");
+		CorrectionExoATrouPasse.add(7,"COOKS");
+		CorrectionExoATrouPasse.add(8,"WOULD BECOME");
+		CorrectionExoATrouPasse.add(9,"SHOWS");
+		
+		// End Initialisation de la liste contenant les reponses de l'exercice AS LIK
+		
+		// Initialisation de la liste contenant les reponses de l'exercice Passe
 		CorrectionExoATrouAsLike.add(0,"LIKE");
 		CorrectionExoATrouAsLike.add(1,"AS");
 		CorrectionExoATrouAsLike.add(2,"AS AN");
@@ -49,8 +65,8 @@ public class Modele {
 		CorrectionExoATrouAsLike.add(8,"AS A");
 		CorrectionExoATrouAsLike.add(9,"LIKE");
 		
-		// End Initialisation de la liste contenant les reponses de l'exercice AS LIK
 		
+		// End Initialisation de la liste contenant les reponses de l'exercice AS LIK
 		// Initialisation Voc A table
 		ArrayList<String> tampon = new ArrayList<String>();
 		tampon.add(0,"beurre");
@@ -470,6 +486,35 @@ public class Modele {
 		return res;
 		
 	}
+	
+	public ArrayList<ArrayList<Object>> compareReponseExoATrou(ArrayList<String> reponse){
+		ArrayList<Object> tampon ;
+		ArrayList<ArrayList<Object>> res = new ArrayList<ArrayList<Object>>();
+		for(int i = 0; i < reponse.size();i++){
+			if(reponse.get(i).equals(this.CorrectionExoATrouPasse.get(i).toUpperCase())){
+				tampon = new ArrayList<Object>();
+				tampon.add(0,true);
+				tampon.add(1,reponse.get(i));
+				res.add(i, tampon );
+				
+			}
+			
+			
+			else{
+				tampon = new ArrayList<Object>();
+				tampon.add(0,false);
+				tampon.add(1,reponse.get(i));
+				res.add(i, tampon );
+			}
+		}
+		
+		
+		return res;
+	}
+	
+	
+	
+	
 	
 	public ArrayList<Double> nbalea(int taille){
 		ArrayList<Double> res = new ArrayList<Double>();

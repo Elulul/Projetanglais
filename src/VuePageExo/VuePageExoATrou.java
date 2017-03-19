@@ -4,9 +4,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import ControlerVersCours.ContinuerVersCours;
 import ControlerVersPageExo.ContinuerVersPageExo;
 import ControlerVersPageExo.ContinuerVersPageExoATrouAsLike;
+import ControlerVersPageExo.ContinuerVersPageExoATrouPasse;
 import Vue.Vue;
 import anglais.Modele;
 
@@ -14,6 +14,8 @@ public class VuePageExoATrou extends JPanel implements Vue{
 
 	Modele m;
 	private JButton aslike =  new JButton();
+	private JButton Passe =  new JButton();
+	private JButton Future =  new JButton();
 	private JButton retour = new JButton(new ImageIcon("./images/TestBack.png"));
 	
 	
@@ -26,6 +28,15 @@ public class VuePageExoATrou extends JPanel implements Vue{
 		retour.addActionListener(new ContinuerVersPageExo(m,this));
 		retour.setBorderPainted(false);
 		this.add(retour);
+		
+		this.add(Passe);
+		Passe.setText("Preterit");
+		Passe.setBounds(15,190, 125, 35);
+		Passe.addActionListener(new ContinuerVersPageExoATrouPasse(m,this) );
+		
+		this.add(Future);
+		Future.setText("Future");
+		Future.setBounds(15,230, 125, 35);
 		
 		this.add(aslike);
 		aslike.setText("rule AS/LIKE");

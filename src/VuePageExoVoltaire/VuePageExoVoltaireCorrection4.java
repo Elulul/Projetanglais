@@ -14,11 +14,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaire4;
+import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaire;
 import Vue.Vue;
 import anglais.Modele;
 
-public class VuePageExoVoltaireCorrection3 extends JPanel implements Vue{
+public class VuePageExoVoltaireCorrection4 extends JPanel implements Vue {
 
 	Modele m;
 	boolean trouve;
@@ -34,7 +34,7 @@ public class VuePageExoVoltaireCorrection3 extends JPanel implements Vue{
 	Font f2 = new Font("Serif", Font.PLAIN, 20); 
 	private BufferedImage image;
 
-		public VuePageExoVoltaireCorrection3(Modele m,boolean trouve,boolean pasdefaute,boolean click){
+		public VuePageExoVoltaireCorrection4(Modele m,boolean trouve,boolean pasdefaute,boolean click){
 			this.m = m;
 			this.trouve = trouve;
 			this.pasdefaute = pasdefaute;
@@ -60,22 +60,22 @@ public class VuePageExoVoltaireCorrection3 extends JPanel implements Vue{
 			retour.setBorderPainted(false);
 			
 			
-			debut.setText("When I was young, I ");
+			debut.setText("He");
 			debut.setBounds(450, 300,400, 50);
 			debut.setFont(f);
 			
 			
-			motatrouver.setText("use");
-			motatrouver.setBounds(750, 300,100, 50);
+			motatrouver.setText("met");
+			motatrouver.setBounds(500, 300,100, 50);
 			motatrouver.setFont(f);
 			
-			fin.setText("to sleep alone.");
-			fin.setBounds(805, 300,350, 50);
+			fin.setText("her yesterday.");
+			fin.setBounds(565, 300,350, 50);
 			fin.setFont(f);
 			
 			next.setText("Next");
 			next.setBounds(1000, 650, 100, 60);
-			next.addActionListener(new ContinuerVersPageExoVoltaire4(m,this));
+			next.addActionListener(new ContinuerVersPageExoVoltaire(m,this));
 				
 			
 				if(click && pasdefaute){
@@ -97,7 +97,7 @@ public class VuePageExoVoltaireCorrection3 extends JPanel implements Vue{
 						motatrouver.setForeground(new Color(238,0,0));
 						
 						this.add(nofaute);
-						nofaute.setText("The mistake was on the word 'use' which should be 'used'");
+						nofaute.setText("The mistake was on the word 'has met' which should be 'met'");
 						nofaute.setBounds(450, 400,800, 50);
 						nofaute.setFont(f2);
 					}
@@ -115,7 +115,7 @@ public class VuePageExoVoltaireCorrection3 extends JPanel implements Vue{
 				
 						motatrouver.setForeground(new Color(238,0,0));
 						this.add(nofaute);
-						nofaute.setText("The mistake was on the word 'use' which should be 'used'");
+						nofaute.setText("The mistake was on the word 'has met' which should be 'met'");
 						nofaute.setBounds(500, 400,800, 50);
 						nofaute.setFont(f2);
 					
