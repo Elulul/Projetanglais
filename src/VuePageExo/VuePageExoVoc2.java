@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ControlerVersCours.ContinuerVersCours;
+import ControlerVersPageExo.ContinuerVersPageExo;
 import ControlerVersPageExo.ContinuerVersPageExoVocCorrection;
 import Vue.Vue;
 import anglais.Modele;
@@ -40,7 +40,7 @@ public class VuePageExoVoc2 extends JPanel implements Vue {
 		
 		retour.setText("Practice");
 		retour.setBounds(20, 20, 138, 36);
-		retour.addActionListener(new ContinuerVersCours(m,this));
+		retour.addActionListener(new ContinuerVersPageExo(m,this));
 		
 		this.listeVoc = listeVoc ;//m.getListeVocHabit();
 		
