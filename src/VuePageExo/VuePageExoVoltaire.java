@@ -1,6 +1,5 @@
 package VuePageExo;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -13,8 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Controler.recupererPosVoltaire;
 import ControlerVersPageExo.ContinuerVersPageExo;
+import ControlerVersPageExo.recupererPosVoltaire;
 import Vue.Vue;
 import anglais.Modele;
 

@@ -93,6 +93,7 @@ public class VueCours extends JPanel implements Vue {
 	       }
 		
 		retour.setBounds(20, 20,80, 79);
+		retour.setBorderPainted(false);
 		retour.addActionListener(new ContinuerVersPageDaccueil(m,this));
 		
 		
@@ -130,10 +131,10 @@ public class VueCours extends JPanel implements Vue {
 		
 		
 		
-		VocabulaireATable.setContentAreaFilled(false);
-		VocabulaireATable.setBorderPainted(false);
-		VocabulaireATable.setBounds(1018, 614, 236, 29);
-		VocabulaireATable.addActionListener(new ContinuerVersCoursVocabulaireATable(m,this));
+//		VocabulaireATable.setContentAreaFilled(false);
+//		VocabulaireATable.setBorderPainted(false);
+//		VocabulaireATable.setBounds(1018, 614, 236, 29);
+//		VocabulaireATable.addActionListener(new ContinuerVersCoursVocabulaireATable(m,this));
 		
 		VocabulaireHabit.setContentAreaFilled(false);
 		VocabulaireHabit.setBorderPainted(false);

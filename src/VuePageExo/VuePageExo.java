@@ -136,11 +136,11 @@ public class VuePageExo extends JPanel implements Vue{
 		exoATrou.setBounds(520,140, 330, 35);
 		exoATrou.addActionListener(new ContinuerVersPageExoATrou(m,this));
 		
-		exoVocATable.setContentAreaFilled(false);
-		exoVocATable.setBorderPainted(false);
-		exoVocATable.setBounds(1018, 614, 236, 29);
-		exoVocATable.addActionListener(new ContinuerVersPageExoVocATable(m,this));
-		
+//		exoVocATable.setContentAreaFilled(false);
+//		exoVocATable.setBorderPainted(false);
+//		exoVocATable.setBounds(1018, 614, 236, 29);
+//		exoVocATable.addActionListener(new ContinuerVersPageExoVocATable(m,this));
+//		
 		exoVoltaire.setContentAreaFilled(false);
 		exoVoltaire.setBorderPainted(false);
 		exoVoltaire.setBounds(100,145, 240, 35);
