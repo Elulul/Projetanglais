@@ -24,7 +24,7 @@ public class VuePageExoVoltaire2 extends JPanel implements Vue {
 	String maphras = " I am sleeping in my room.";
 	JLabel maphrase = new JLabel();
 	private JButton retour= new JButton(new ImageIcon("./images/TestBack.png"));
-	private JButton pasErreur= new JButton();
+	private JButton pasErreur= new JButton(new ImageIcon("./images/noMistake.png"));
 	Font f = new Font("Serif", Font.PLAIN, 36); // par exemple 
 	private BufferedImage image;
 
@@ -57,7 +57,7 @@ public class VuePageExoVoltaire2 extends JPanel implements Vue {
 		
 		
 		this.add(pasErreur);
-		pasErreur.setText("There are no mistakes");
+
 		pasErreur.setBounds(520, 450,300, 50);
 		pasErreur.addActionListener(new ContinuerVersPageExoVoltaireCorrection2(m,this));
 		}

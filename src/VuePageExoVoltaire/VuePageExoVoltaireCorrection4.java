@@ -25,7 +25,7 @@ public class VuePageExoVoltaireCorrection4 extends JPanel implements Vue {
 	boolean pasdefaute;
 	boolean click;
 	private JButton retour= new JButton(new ImageIcon("./images/TestBack.png"));
-	private JButton next = new JButton();
+	private JButton next = new JButton(new ImageIcon("./images/next.png"));
 	JLabel debut = new JLabel();
 	JLabel motatrouver = new JLabel();
 	JLabel fin = new JLabel();
@@ -73,8 +73,7 @@ public class VuePageExoVoltaireCorrection4 extends JPanel implements Vue {
 			fin.setBounds(565, 300,350, 50);
 			fin.setFont(f);
 			
-			next.setText("Next");
-			next.setBounds(1000, 650, 100, 60);
+			next.setBounds(1000, 300, 100, 60);
 			next.addActionListener(new ContinuerVersPageExoVoltaire(m,this));
 				
 			

@@ -25,7 +25,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 	boolean pasdefaute;
 	boolean click;
 	private JButton retour= new JButton(new ImageIcon("./images/TestBack.png"));
-	private JButton next = new JButton();
+	private JButton next = new JButton(new ImageIcon("./images/next.png"));
 	JLabel debut = new JLabel();
 	JLabel motatrouver = new JLabel();
 	JLabel fin = new JLabel();
@@ -57,8 +57,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 			this.add(retour);
 			this.add(next);
 			
-			next.setText("Next");
-			next.setBounds(1000, 650, 100, 60);
+			next.setBounds(1000, 300, 100, 60);
 			next.addActionListener(new ContinuerVersPageExoVoltaire2(m,this));
 			
 			retour.setBounds(20, 20, 80, 80);
@@ -67,12 +66,12 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 			
 			
 			debut.setText("I ");
-			debut.setBounds(450, 300,20, 50);
+			debut.setBounds(430, 300,20, 50);
 			debut.setFont(f);
 			
 			
 			motatrouver.setText("is");
-			motatrouver.setBounds(470, 300,50, 50);
+			motatrouver.setBounds(450, 300,50, 50);
 			motatrouver.setFont(f);
 			
 			
@@ -81,7 +80,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 				if(click && pasdefaute){
 					this.add(nofaute);
 					nofaute.setText("There is no mistake in this sentence");
-					nofaute.setBounds(500, 400,400, 50);
+					nofaute.setBounds(480, 400,400, 50);
 					nofaute.setFont(f2);
 				}
 				
@@ -90,7 +89,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 						motatrouver.setForeground(new Color(0,238,0));
 						this.add(nofaute);
 						nofaute.setText("Congratulations ! You spotted the mistake");
-						nofaute.setBounds(500, 400,400, 50);
+						nofaute.setBounds(480, 400,400, 50);
 						nofaute.setFont(f2);
 					}
 					else{
@@ -98,7 +97,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 						
 						this.add(nofaute);
 						nofaute.setText("The mistake was on the word 'is' which should be 'am'");
-						nofaute.setBounds(450, 400,800, 50);
+						nofaute.setBounds(430, 400,800, 50);
 						nofaute.setFont(f2);
 					}
 				}
@@ -107,7 +106,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 				if(!click && pasdefaute){
 					this.add(nofaute);
 					nofaute.setText("Congratulations ! There were no mistakes in the sentence");
-					nofaute.setBounds(500, 400,400, 50);
+					nofaute.setBounds(480, 400,400, 50);
 					nofaute.setFont(f2);
 				}
 				
@@ -116,7 +115,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 						motatrouver.setForeground(new Color(238,0,0));
 						this.add(nofaute);
 						nofaute.setText("The mistake was on the word 'is' which should be 'am'");
-						nofaute.setBounds(500, 400,800, 50);
+						nofaute.setBounds(480, 400,800, 50);
 						nofaute.setFont(f2);
 					
 				}
@@ -125,7 +124,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 			
 			
 			fin.setText("sleeping in my room.");
-			fin.setBounds(502, 300,350, 50);
+			fin.setBounds(482, 300,350, 50);
 			fin.setFont(f);
 			}
 		

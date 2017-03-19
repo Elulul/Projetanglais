@@ -2,7 +2,7 @@ package anglais;
 
 import javax.swing.JFrame;
 
-import VuePageExoVoltaire.VuePageExoVoltaire;
+import Vue.VueDaccueil;
 
 public class Fenetre extends JFrame {
 	Modele m;
