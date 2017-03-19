@@ -1,8 +1,13 @@
 package VuePageExo;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -40,7 +45,7 @@ Modele m;
 	private JLabel phrase10 = new JLabel();
 
 	private JButton retourAccueil = new JButton(new ImageIcon("./images/Home.png"));
-	
+	private BufferedImage image;
 	
 	
 	public VuePageExoATrouFutureCorrection (Modele m,ArrayList<ArrayList<Object>> reponse){
@@ -63,7 +68,14 @@ Modele m;
 		this.add(phrase9);
 		this.add(phrase10);
 		
-		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/exTrou2.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 		phrase1.setText("1. Tony a friend tomorrow.(meet) . ");
 		phrase1.setBounds(25, 25,1200, 40);
 		
@@ -150,6 +162,9 @@ Modele m;
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
-	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 	
 }

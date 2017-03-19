@@ -1,5 +1,11 @@
 package VuePageExo;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -18,31 +24,41 @@ public class VuePageExoATrou extends JPanel implements Vue{
 	private JButton Passe =  new JButton();
 	private JButton Future =  new JButton();
 	private JButton retour = new JButton(new ImageIcon("./images/TestBack.png"));
-	
+	private BufferedImage image;
 	
 	public VuePageExoATrou(Modele m){
 		this.m = m;
-		
 		this.setLayout(null);
 		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/exTrou.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 		retour.setBounds(20, 20, 80, 80);
 		retour.addActionListener(new ContinuerVersPageExo(m,this));
 		retour.setBorderPainted(false);
 		this.add(retour);
 		
 		this.add(Passe);
-		Passe.setText("Preterit");
-		Passe.setBounds(15,190, 125, 35);
+		Passe.setContentAreaFilled(false);
+		Passe.setBorderPainted(false);
+		Passe.setBounds(50,188, 140, 27);
 		Passe.addActionListener(new ContinuerVersPageExoATrouPasse(m,this) );
 		
 		this.add(Future);
-		Future.setText("Future");
-		Future.setBounds(15,230, 125, 35);
+		Future.setBorderPainted(false);
+		Future.setContentAreaFilled(false);
+		Future.setBounds(60,223, 125, 24);
 		Future.addActionListener(new ContinuerVersPageExoATrouFuture(m,this));
 		
 		this.add(aslike);
-		aslike.setText("rule AS/LIKE");
-		aslike.setBounds(15,150, 125, 35);
+		aslike.setContentAreaFilled(false);
+		aslike.setBorderPainted(false);
+		aslike.setBounds(60,150, 125, 30);
 		aslike.addActionListener(new ContinuerVersPageExoATrouAsLike(m,this));
 	}
 	
@@ -51,4 +67,8 @@ public class VuePageExoATrou extends JPanel implements Vue{
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }

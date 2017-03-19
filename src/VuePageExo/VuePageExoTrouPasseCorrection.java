@@ -1,8 +1,13 @@
 package VuePageExo;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -15,7 +20,7 @@ import anglais.Modele;
 public class VuePageExoTrouPasseCorrection extends JPanel implements Vue {
 
 Modele m;
-	
+	private BufferedImage image;
 	ArrayList<JLabel> reponseAAfficher = new ArrayList<JLabel>();
 	ArrayList<JLabel> Correction = new ArrayList<JLabel>();
 	
@@ -106,7 +111,14 @@ Modele m;
 
 		phrase10.setText("10. Anna (show) me the right way to come back from school on Mondays. ");
 		phrase10.setBounds(25, 475, 1200, 35);
-		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/exTrou2.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 
 	
 		for(int i =0 ; i < reponse.size();i++){
@@ -159,5 +171,8 @@ Modele m;
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
-	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }

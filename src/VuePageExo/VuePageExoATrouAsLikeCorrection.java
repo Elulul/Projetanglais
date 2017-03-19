@@ -1,8 +1,13 @@
 package VuePageExo;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -57,8 +62,7 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 	private JLabel phrase10fin = new JLabel();
 
 	private JButton retourAccueil = new JButton(new ImageIcon("./images/Home.png"));
-	
-	
+	private BufferedImage image;
 	
 	public VuePageExoATrouAsLikeCorrection(Modele m,ArrayList<ArrayList<Object>> reponse){
 		this.initreponseAAfficher();
@@ -90,25 +94,29 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 		this.add(phrase10deb);
 		this.add(phrase10fin);
 		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/exTrou2.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
+		
 		phrase1deb.setText("1. Really, there are very few people ");
 		phrase1deb.setBounds(25, 25, 400, 35);
-		
 		
 
 		phrase1fin.setText("you... and that's why you're my best friend!");
 		phrase1fin.setBounds( 350,25, 400, 35);
 		
 		
-		
 		phrase2deb.setText("2. You must really do");
 		phrase2deb.setBounds(25, 75, 200, 35);
-		
 		
 
 		phrase2fin.setText("the doctor told you. Follow his advice, and you will be fine.");
 		phrase2fin.setBounds( 260,75, 400, 35);
-		
-		
 		
 		
 		phrase3deb.setText("3. He's going to work");
@@ -121,69 +129,56 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 		
 		
 		
-		
 		phrase4deb.setText("4. Look at Bob eating his meal... He looks");
 		phrase4deb.setBounds(25, 175, 400, 35);
-		
 		
 
 		phrase4fin.setText("he were starving! ");
 		phrase4fin.setBounds( 380,175, 400, 35);
 		
 		
-		
 		phrase5deb.setText("5.Behave");
 		phrase5deb.setBounds(25, 225, 75, 35);
-		
 
 		phrase5fin.setText("real brother and help her out of this situation... ");
 		phrase5fin.setBounds( 200,225, 400, 35);
 		
-		
 		phrase6deb.setText("6.Jerry doesn't feel");
 		phrase6deb.setBounds(25, 275, 175, 35);
-		
 		
 
 		phrase6fin.setText("coming to my party... Try to persuade him! ");
 		phrase6fin.setBounds( 260,275, 400, 35);
-		
 		phrase7deb.setText("7. It looks");
 		phrase7deb.setBounds(25, 325, 100, 35);
-		
 
 		
 
 		phrase7fin.setText("a storm is going to break out. Let's hurry home! ");
 		phrase7fin.setBounds( 210,325, 400, 35);
 		
-		
 		phrase8deb.setText("8. 'I'm the boss',");
 		phrase8deb.setBounds(25, 375, 175, 35);
-		
 
 		
 
 		phrase8fin.setText("my father used to say...");
 		phrase8fin.setBounds( 240,375, 400, 35);
-		
 		phrase9deb.setText("9. She can be regarded");
 		phrase9deb.setBounds(25, 425, 225, 35);
-		
 
 		
 
 		phrase9fin.setText("very trustworthy person... You may follow her advice. ");
 		phrase9fin.setBounds( 280,425, 500, 35);
-		
 		phrase10deb.setText("10. 'I wanna be");
 		phrase10deb.setBounds(25, 475, 175, 35);
-		
+
 		
 
 		phrase10fin.setText("you!");
 		phrase10fin.setBounds( 240,475, 400, 35);
-		
+
 	
 		for(int i =0 ; i < reponse.size();i++){
 			if((boolean) reponse.get(i).get(0)){
@@ -201,7 +196,7 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 				reponseAAfficher.get(i).setBounds((int)reponse.get(i).get(1),(int) reponse.get(i).get(2), 100, 20);
 				Correction.get(i).setText((i+1)+"."+ "Good answer :"+ (String) reponse.get(i).get(3).toString());
 				this.add(Correction.get(i));
-				Correction.get(i).setBounds(900,50*i + 25,400,20 );
+				Correction.get(i).setBounds(1050,50*i + 25,400,20 );
 			}
 	
 		
@@ -235,4 +230,8 @@ public class VuePageExoATrouAsLikeCorrection extends JPanel implements Vue{
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }

@@ -1,5 +1,12 @@
 package VuePageExo;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,7 +19,7 @@ import anglais.Modele;
 public class VuePageExoATrouFuture extends JPanel implements Vue{
 
 	Modele m;
-	private JButton Valider = new JButton();
+	private JButton Valider = new JButton(new ImageIcon("./images/validate.png"));
 	private JLabel phrase1 = new JLabel();
 	public JTextField phrase1scroll = new JTextField();
 	
@@ -45,7 +52,7 @@ public class VuePageExoATrouFuture extends JPanel implements Vue{
 	private JLabel phrase10= new JLabel();
 
 	public JTextField phrase10scroll = new JTextField();
-	
+	private BufferedImage image;
 	
 	public VuePageExoATrouFuture (Modele m){
 		this.m = m;
@@ -138,14 +145,20 @@ public class VuePageExoATrouFuture extends JPanel implements Vue{
 		
 		
 		
-		Valider.setText("Validate");
-		Valider.setBounds(1000, 600, 125, 35);
+		Valider.setBounds(1000, 600, 160, 45);
 		Valider.addActionListener(new ContinuerVersPageExoATrouFutureCorrection(m,this));
 		
 		
 
 		
-		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/exTrou2.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 	}
 	
 	
@@ -154,5 +167,8 @@ public class VuePageExoATrouFuture extends JPanel implements Vue{
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
-	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }
