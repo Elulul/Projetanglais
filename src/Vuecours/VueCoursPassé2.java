@@ -1,7 +1,13 @@
 package Vuecours;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,9 +23,10 @@ public class VueCoursPassé2  extends JPanel implements Vue{
 	Modele m;
 	JButton retour = new JButton(new ImageIcon("./images/TestBack.png"));
 	JLabel cours = new JLabel();
-	
+	private BufferedImage image;
+
 	JTextArea cours2 = new JTextArea();
-	Font f2 = new Font("Serif", Font.PLAIN, 14);
+	Font f2 = new Font("Serif", Font.PLAIN, 18);
 	
 	public VueCoursPassé2(Modele m){
 		this.m = m;
@@ -31,7 +38,14 @@ public class VueCoursPassé2  extends JPanel implements Vue{
 		retour.setBounds(20, 20, 80, 80);
 		retour.addActionListener(new ContinuerVersCours(m,this));
 		retour.setBorderPainted(false);
-		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/coursGrammaire.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 		cours2.setText("LE PRESENT PERFECT\n\n"
 				+ "EMPLOIS\n"
 				+ "a) Action qui a commencé dans le passé et qui se poursuit dans le présent; b) action dont on fait le bilan\n"
@@ -70,8 +84,10 @@ public class VueCoursPassé2  extends JPanel implements Vue{
 				);
 		
 		cours2.setBounds(120, 20, 800, 800);
-		cours2.setBackground(null);
+		cours2.setOpaque(false);
 		cours2.setFont(f2);
+		cours2.setForeground(Color.white);
+
 		
 	}
 	
@@ -79,5 +95,8 @@ public class VueCoursPassé2  extends JPanel implements Vue{
 		m.getFenetre().setContentPane(this);
 		m.getFenetre().revalidate();
 	}
-	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }

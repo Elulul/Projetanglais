@@ -111,14 +111,13 @@ public class VueCours extends JPanel implements Vue {
 		RegleAnA.addActionListener(new ContinuerVersCoursAnA(m,this));
 		
 
-		AuxiliaireBe.setText("Auxiliary Verb Be");
-		AuxiliaireBe.setBounds(65, 250, 150, 28);
-		AuxiliaireBe.addActionListener(new ContinuerVersCoursAuxiliaireBe(m,this));
+		
+		
 
 		AuxiliaireBe.setContentAreaFilled(false);
 		AuxiliaireBe.setBorderPainted(false);
 		AuxiliaireBe.setBounds(15, 240,238, 60);
-		AuxiliaireBe.addActionListener(new ContinuerVersCoursAnA(m,this));
+		AuxiliaireBe.addActionListener(new ContinuerVersCoursAuxiliaireBe(m,this));
 
 		
 		Passe.setContentAreaFilled(false);

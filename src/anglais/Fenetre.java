@@ -16,8 +16,8 @@ public class Fenetre extends JFrame {
 	    this.setLocationRelativeTo(null);
 	    this.m = new Modele(this);
 	    
-	    VueDaccueil v = new VueDaccueil(m);
-	 
+	    //VueDaccueil v = new VueDaccueil(m);
+	    VueCours v = new VueCours(m);
 	    this.setContentPane(v);
 	    this.setVisible(true);
 	    

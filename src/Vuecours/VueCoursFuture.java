@@ -1,7 +1,13 @@
 package Vuecours;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -19,8 +25,9 @@ public class VueCoursFuture extends JPanel implements Vue{
 	JLabel cours = new JLabel();
 	
 	JTextArea cours2 = new JTextArea();
-	Font f2 = new Font("Serif", Font.PLAIN, 14);
-	
+	Font f2 = new Font("Serif", Font.PLAIN, 18);
+	private BufferedImage image;
+
 	public VueCoursFuture(Modele m){
 		this.m = m;
 		
@@ -31,7 +38,14 @@ public class VueCoursFuture extends JPanel implements Vue{
 		retour.setBounds(20, 20, 80, 80);
 		retour.addActionListener(new ContinuerVersCours(m,this));
 		retour.setBorderPainted(false);
-		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/coursGrammaire.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 		cours2.setText("CE PRESENT FRANÇAIS QUI DEVIENT FUTUR EN ANGLAIS \n"
 				+ "Lorsque le français se réfère à des intentions ou attitudes envers autrui, on emploie will ou shall en anglais. \n "
 				+ "1/ WILL ou 'LL \n "
@@ -78,15 +92,19 @@ public class VueCoursFuture extends JPanel implements Vue{
 		
 		
 	cours2.setBounds(120, 20, 800, 800);
-	cours2.setBackground(null);
+	cours2.setOpaque(false);
 	cours2.setFont(f2);
-	
+	cours2.setForeground(Color.white);
+
 }
 
 public void update() {
 	m.getFenetre().setContentPane(this);
 	m.getFenetre().revalidate();
 }
-
+protected void paintComponent(Graphics g) {
+    super.paintComponent(g); 
+    g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+}
 	
 }
