@@ -4,19 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Vue.Vue;
-import VuePageExo.VuePageExoVoltaireCorrection;
+import VuePageExo.VuePageExoVoltaireCorrection2;
 import anglais.Modele;
 
-public class ContinuerVersPageExoVoltaireCorrection implements ActionListener {
+public class ContinuerVersPageExoVoltaireCorrection2 implements ActionListener {
 
-	
+
 	Modele m;
 	Vue v;
 	
 	boolean trouve;
 
 	
-	public ContinuerVersPageExoVoltaireCorrection(Modele m,Vue v){
+	public ContinuerVersPageExoVoltaireCorrection2 (Modele m,Vue v){
 		this.m = m;
 		this.v= v;
 		
@@ -36,7 +36,8 @@ public class ContinuerVersPageExoVoltaireCorrection implements ActionListener {
 		
 		
 		
-		VuePageExoVoltaireCorrection vueEATAL = new VuePageExoVoltaireCorrection(m,trouve,false,false);
+		VuePageExoVoltaireCorrection2 vueEATAL = new VuePageExoVoltaireCorrection2(m,trouve,true,false);
 		vueEATAL.update();
 	}
+	
 }
