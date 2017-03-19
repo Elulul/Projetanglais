@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
 import ControlerVersPageExo.ContinuerVersPageExoATrouAsLike;
+import ControlerVersPageExo.ContinuerVersPageExoATrouFuture;
 import ControlerVersPageExo.ContinuerVersPageExoATrouPasse;
 import Vue.Vue;
 import anglais.Modele;
@@ -37,6 +38,7 @@ public class VuePageExoATrou extends JPanel implements Vue{
 		this.add(Future);
 		Future.setText("Future");
 		Future.setBounds(15,230, 125, 35);
+		Future.addActionListener(new ContinuerVersPageExoATrouFuture(m,this));
 		
 		this.add(aslike);
 		aslike.setText("rule AS/LIKE");

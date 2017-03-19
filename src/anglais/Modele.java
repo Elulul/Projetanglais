@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Modele {
 
 	private ArrayList<String> CorrectionExoATrouAsLike = new ArrayList<String>() ;
-
+	public ArrayList<String> CorrectionExoATrouFuture = new ArrayList<String>() ;
 	public ArrayList<String> CorrectionExoATrouPasse = new ArrayList<String>() ;
 	private ArrayList<ArrayList<String>> ListeVocATable = new ArrayList<ArrayList<String>>();
 	private ArrayList<ArrayList<String>> ListeBricolage = new ArrayList<ArrayList<String>>();
@@ -41,7 +41,7 @@ public class Modele {
 		// Initialisation de la liste contenant les reponses de l'exercice AS LIKE 
 		
 		CorrectionExoATrouPasse.add(0,"IS");
-		CorrectionExoATrouPasse.add(1," IS OPENING");
+		CorrectionExoATrouPasse.add(1,"IS OPENING");
 		CorrectionExoATrouPasse.add(2,"WOULD RUN");
 		CorrectionExoATrouPasse.add(3,"WON");
 		CorrectionExoATrouPasse.add(4,"HAVE NEVER SWUM");
@@ -67,6 +67,22 @@ public class Modele {
 		
 		
 		// End Initialisation de la liste contenant les reponses de l'exercice AS LIK
+		
+		
+		CorrectionExoATrouFuture.add(0,"IS MEETING");
+		CorrectionExoATrouFuture.add(1," WILL SNOW");
+		CorrectionExoATrouFuture.add(2,"WILL VISIT");
+		CorrectionExoATrouFuture.add(3,"ARE YOU LEAVING");
+		CorrectionExoATrouFuture.add(4,"WILL WIN");
+		CorrectionExoATrouFuture.add(5,"WILL NOT FAIL");
+		CorrectionExoATrouFuture.add(6,"AM VISITING");
+		CorrectionExoATrouFuture.add(7,"WILL BITE");
+		CorrectionExoATrouFuture.add(8,"ARE COMING");
+		CorrectionExoATrouFuture.add(9,"IS GOING TO RAIN");
+		
+		
+		
+		
 		// Initialisation Voc A table
 		ArrayList<String> tampon = new ArrayList<String>();
 		tampon.add(0,"beurre");
@@ -491,7 +507,33 @@ public class Modele {
 		ArrayList<Object> tampon ;
 		ArrayList<ArrayList<Object>> res = new ArrayList<ArrayList<Object>>();
 		for(int i = 0; i < reponse.size();i++){
-			if(reponse.get(i).equals(this.CorrectionExoATrouPasse.get(i).toUpperCase())){
+			if(reponse.get(i).toUpperCase().equals(this.CorrectionExoATrouPasse.get(i).toUpperCase())){
+				tampon = new ArrayList<Object>();
+				tampon.add(0,true);
+				tampon.add(1,reponse.get(i));
+				res.add(i, tampon );
+				
+			}
+			
+			
+			else{
+				tampon = new ArrayList<Object>();
+				tampon.add(0,false);
+				tampon.add(1,reponse.get(i));
+				res.add(i, tampon );
+			}
+		}
+		
+		
+		return res;
+	}
+	
+	
+	public ArrayList<ArrayList<Object>> compareReponseExoATrouFuture(ArrayList<String> reponse){
+		ArrayList<Object> tampon ;
+		ArrayList<ArrayList<Object>> res = new ArrayList<ArrayList<Object>>();
+		for(int i = 0; i < reponse.size();i++){
+			if(reponse.get(i).toUpperCase().equals(this.CorrectionExoATrouFuture.get(i).toUpperCase())){
 				tampon = new ArrayList<Object>();
 				tampon.add(0,true);
 				tampon.add(1,reponse.get(i));
