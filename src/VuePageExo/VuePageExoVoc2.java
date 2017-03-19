@@ -1,8 +1,15 @@
 package VuePageExo;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,12 +23,14 @@ import anglais.Modele;
 public class VuePageExoVoc2 extends JPanel implements Vue {
 
 	Modele m;
-	JButton retour = new JButton();
-	JButton valider = new JButton();
+	private JButton retour = new JButton(new ImageIcon("./images/TestBack.png"));
+	JButton valider = new JButton(new ImageIcon("./images/Validate.png"));
 	ArrayList<ArrayList<String>> listeVoc = new  ArrayList<ArrayList<String>>();
 	ArrayList<ArrayList<Object>> listeVocAAfficher = new  ArrayList<ArrayList<Object>>();
 	ArrayList<Double> choix = new ArrayList<Double>();
-	Font f2 = new Font("Serif", Font.PLAIN, 20);
+	Font f2 = new Font("Serif", Font.BOLD, 22);
+	private BufferedImage image;
+
 	
 	public VuePageExoVoc2(Modele m,ArrayList<ArrayList<String>> listeVoc) {
 		this.m = m;
@@ -29,18 +38,25 @@ public class VuePageExoVoc2 extends JPanel implements Vue {
 		choix = m.nbalea(30); 
 		
 		this.setLayout(null);
-		
+
+		try {
+			 
+	          image = ImageIO.read(new File("./images/vocab.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 		
 		this.add(retour);
 		this.add(valider);
 		
-		valider.setText("Validate");
-		valider.setBounds(1000, 650, 138, 36);
+		valider.setBounds(1080, 640, 160, 45);
 		valider.addActionListener( new ContinuerVersPageExoVocCorrection(m,this,listeVoc,listeVocAAfficher));
 		
-		retour.setText("Practice");
-		retour.setBounds(20, 20, 138, 36);
+		retour.setBounds(20, 20, 80, 80);
 		retour.addActionListener(new ContinuerVersPageExo(m,this));
+		retour.setBorderPainted(false);
 		
 		this.listeVoc = listeVoc ;//m.getListeVocHabit();
 		
@@ -56,9 +72,12 @@ public class VuePageExoVoc2 extends JPanel implements Vue {
 				((JLabel) tampon.get(0)).setText(listeVoc.get(i).get(0) + " :");
 				this.add(((JLabel) tampon.get(0)));
 				this.add(( JTextField) tampon.get(1));
-				((JLabel) tampon.get(0)).setBounds(190, 40*i +40, 200, 30);
+				((JLabel) tampon.get(0)).setBounds(150, 40*i +40, 300, 30);
 				((JLabel) tampon.get(0)).setFont(f2);
-				((JTextField) tampon.get(1)).setBounds(420, 40*i +40, 150, 30);
+				((JLabel) tampon.get(0)).setForeground(Color.white);
+				((JTextField) tampon.get(1)).setBounds(450, 40*i +40, 150, 30);
+				((JTextField) tampon.get(1)).setOpaque(false);
+				((JTextField) tampon.get(1)).setForeground(Color.white);
 				listeVocAAfficher.add(i,tampon);
 			}
 			
@@ -70,9 +89,12 @@ public class VuePageExoVoc2 extends JPanel implements Vue {
 				((JLabel) tampon.get(1)).setText(listeVoc.get(i).get(1));
 				this.add(((JLabel) tampon.get(1)));
 				this.add(( JTextField) tampon.get(0));
-				((JTextField) tampon.get(0)).setBounds(190, 40*i +40, 150, 30);
-				((JLabel) tampon.get(1)).setBounds(420, i*40 + 40, 200, 30);
+				((JTextField) tampon.get(0)).setBounds(150, 40*i +40, 150, 30);
+				((JTextField) tampon.get(0)).setOpaque(false);
+				((JTextField) tampon.get(0)).setForeground(Color.white);
+				((JLabel) tampon.get(1)).setBounds(450, i*40 + 40, 300, 30);
 				((JLabel) tampon.get(1)).setFont(f2);
+				((JLabel) tampon.get(1)).setForeground(Color.white);
 				listeVocAAfficher.add(i,tampon);
 			}
 			
@@ -90,9 +112,12 @@ public class VuePageExoVoc2 extends JPanel implements Vue {
 				((JLabel) tampon.get(0)).setText(listeVoc.get(i+15).get(0) + " :");
 				this.add(((JLabel) tampon.get(0)));
 				this.add(( JTextField) tampon.get(1));
-				((JLabel) tampon.get(0)).setBounds(700, 40*i +40, 200, 30);
+				((JLabel) tampon.get(0)).setBounds(700, 40*i +40, 400, 30);
 				((JLabel) tampon.get(0)).setFont(f2);
-				((JTextField) tampon.get(1)).setBounds(880, i*40 + 40, 150, 30);
+				((JLabel) tampon.get(0)).setForeground(Color.white);
+				((JTextField) tampon.get(1)).setBounds(1000, i*40 + 40, 150, 30);
+				((JTextField) tampon.get(1)).setOpaque(false);
+				((JTextField) tampon.get(1)).setForeground(Color.white);
 				listeVocAAfficher.add(i+15,tampon);
 			}
 			
@@ -105,8 +130,11 @@ public class VuePageExoVoc2 extends JPanel implements Vue {
 				this.add(((JLabel) tampon.get(1)));
 				this.add(( JTextField) tampon.get(0));
 				((JTextField) tampon.get(0)).setBounds(700, 40*i +40, 150, 30);
+				((JTextField) tampon.get(0)).setOpaque(false);
+				((JTextField) tampon.get(0)).setForeground(Color.white);
 				((JLabel) tampon.get(1)).setFont(f2);
-				((JLabel) tampon.get(1)).setBounds(880, i*40 + 40, 200, 30);
+				((JLabel) tampon.get(1)).setForeground(Color.white);
+				((JLabel) tampon.get(1)).setBounds(1000, i*40 + 40, 400, 30);
 				listeVocAAfficher.add(i+15,tampon);
 			}
 			
@@ -118,7 +146,10 @@ public class VuePageExoVoc2 extends JPanel implements Vue {
 	
 	
 	
-	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 	
 
 	public void update() {

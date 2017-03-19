@@ -1,7 +1,13 @@
 package VuePageExo;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -19,11 +25,20 @@ public class VuePageExoVoltaire extends JPanel implements Vue{
 	JLabel maphrase = new JLabel();
 	private JButton retour= new JButton(new ImageIcon("./images/TestBack.png"));
 	Font f = new Font("Serif", Font.PLAIN, 36); // par exemple 
+	private BufferedImage image;
 
 	 
 
 	public VuePageExoVoltaire(Modele m){
 		this.m = m;
+		try {
+			 
+	          image = ImageIO.read(new File("./images/Voltaire.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 		
 		this.setLayout(null);
 		
@@ -38,7 +53,7 @@ public class VuePageExoVoltaire extends JPanel implements Vue{
 		maphrase.setBackground(null);
 		maphrase.addMouseListener(new recupererPosVoltaire(m,this));
 		maphrase.setFont(f);
-	}
+		}
 	
 	
 	public void update() {
@@ -49,4 +64,8 @@ public class VuePageExoVoltaire extends JPanel implements Vue{
 	public JLabel getmaphrase(){
 		return this.maphrase;
 	}
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 }
