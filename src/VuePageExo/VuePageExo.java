@@ -1,5 +1,11 @@
 package VuePageExo;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -34,6 +40,7 @@ public class VuePageExo extends JPanel implements Vue{
 	private JButton VocabulaireSport = new JButton();
 	private JButton VocabulaireTransport = new JButton();
 	private JButton VocabulaireHabit = new JButton();
+	private BufferedImage image;
 	
 	public VuePageExo(Modele m){
 		this.m =m;
@@ -41,7 +48,17 @@ public class VuePageExo extends JPanel implements Vue{
 		this.setLayout(null);
 		
 		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/exercice.png"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
+		
 		Home.setBounds(20, 20, 80, 79);
+		Home.setBorderPainted(false);
 		Home.addActionListener(new ContinuerVersPageDaccueil(m,this));
 		
 		this.add(exoATrou);
@@ -61,62 +78,72 @@ public class VuePageExo extends JPanel implements Vue{
 		
 		
 		
-		VocabulaireHabit.setText("Habit");
-		VocabulaireHabit.setBounds(1000, 100, 138, 36);
+		VocabulaireHabit.setContentAreaFilled(false);
+		VocabulaireHabit.setBorderPainted(false);
+		VocabulaireHabit.setBounds(1067, 177, 140, 30);
 		VocabulaireHabit.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireAnimauxSauvage.setText("Animaux");
-		VocabulaireAnimauxSauvage.setBounds(1000, 150, 138, 36);
+
+		VocabulaireAnimauxSauvage.setContentAreaFilled(false);
+		VocabulaireAnimauxSauvage.setBorderPainted(false);
+		VocabulaireAnimauxSauvage.setBounds(1062, 217, 150, 30);
 		VocabulaireAnimauxSauvage.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireBricolage.setText("Bricolage");
-		VocabulaireBricolage.setBounds(1000, 200, 138, 36);
+		VocabulaireBricolage.setContentAreaFilled(false);
+		VocabulaireBricolage.setBorderPainted(false);
+		VocabulaireBricolage.setBounds(1108, 260, 58, 27);
 		VocabulaireBricolage.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireCalendrier.setText("Calendrier");
-		VocabulaireCalendrier.setBounds(1000, 250, 138, 36);
+		VocabulaireCalendrier.setContentAreaFilled(false);
+		VocabulaireCalendrier.setBorderPainted(false);
+		VocabulaireCalendrier.setBounds(1052, 300, 170, 28);
 		VocabulaireCalendrier.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireMaterielInformatique.setText("Materiel informatique");
-		VocabulaireMaterielInformatique.setBounds(1000, 300, 138, 36);
+		VocabulaireMaterielInformatique.setContentAreaFilled(false);
+		VocabulaireMaterielInformatique.setBorderPainted(false);
+		VocabulaireMaterielInformatique.setBounds(1045, 340, 180, 63);
 		VocabulaireMaterielInformatique.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireNourriture.setText("Nourriture");
-		VocabulaireNourriture.setBounds(1000, 350, 138, 36);
+
+		VocabulaireNourriture.setContentAreaFilled(false);
+		VocabulaireNourriture.setBorderPainted(false);
+		VocabulaireNourriture.setBounds(1091, 420, 92, 22);
 		VocabulaireNourriture.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireNourritureSuite.setText("NourritureSuite");
-		VocabulaireNourritureSuite.setBounds(1000, 400, 138, 36);
+		VocabulaireNourritureSuite.setContentAreaFilled(false);
+		VocabulaireNourritureSuite.setBorderPainted(false);
+		VocabulaireNourritureSuite.setBounds(1020, 455, 230, 30);
 		VocabulaireNourritureSuite.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireSentiment.setText("Sentiment");
-		VocabulaireSentiment.setBounds(1000, 450, 138, 36);
+		VocabulaireSentiment.setContentAreaFilled(false);
+		VocabulaireSentiment.setBorderPainted(false);
+		VocabulaireSentiment.setBounds(1054, 498, 163, 24);
 		VocabulaireSentiment.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireSport.setText("Sport");
-		VocabulaireSport.setBounds(1000, 500, 138, 36);
+		VocabulaireSport.setContentAreaFilled(false);
+		VocabulaireSport.setBorderPainted(false);
+		VocabulaireSport.setBounds(1080, 537, 110, 25);
 		VocabulaireSport.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
-		VocabulaireTransport.setText("Transport");
-		VocabulaireTransport.setBounds(1000, 550, 138, 36);
+		VocabulaireTransport.setContentAreaFilled(false);
+		VocabulaireTransport.setBorderPainted(false);
+		VocabulaireTransport.setBounds(1041, 575, 190, 25);
 		VocabulaireTransport.addActionListener(new ContinuerVersPageExoVoc(m,this));
 		
 		
-		
-		
-		
-		
-		
-		exoATrou.setText("Exercice with multiple choices");
-		exoATrou.setBounds(15,100, 225, 35);
+		exoATrou.setContentAreaFilled(false);
+		exoATrou.setBorderPainted(false);
+		exoATrou.setBounds(520,140, 330, 35);
 		exoATrou.addActionListener(new ContinuerVersPageExoATrou(m,this));
 		
-		exoVocATable.setText("A table !");
-		exoVocATable.setBounds(800,350, 225, 35);
+		exoVocATable.setContentAreaFilled(false);
+		exoVocATable.setBorderPainted(false);
+		exoVocATable.setBounds(1018, 614, 236, 29);
 		exoVocATable.addActionListener(new ContinuerVersPageExoVocATable(m,this));
 		
-		exoVoltaire.setText("ExoVoltaire");
-		exoVoltaire.setBounds(15,150, 225, 35);
+		exoVoltaire.setContentAreaFilled(false);
+		exoVoltaire.setBorderPainted(false);
+		exoVoltaire.setBounds(100,145, 240, 35);
 		exoVoltaire.addActionListener(new ContinuerVersPageExoVoltaire(m,this));
 	}
 	
@@ -225,5 +252,9 @@ public class VuePageExo extends JPanel implements Vue{
 	public void setVocabulaireHabit(JButton vocabulaireHabit) {
 		VocabulaireHabit = vocabulaireHabit;
 	}
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 	
 }

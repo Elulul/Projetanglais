@@ -211,25 +211,11 @@ public class VuePageExoATrouAsLike extends JPanel implements Vue{
 		
 		
 		
-		
-		
-		
-		
-		
-	
-		
-		
-		
 		Valider.setText("Validate");
 		Valider.setBounds(1000, 600, 125, 35);
 		Valider.addActionListener(new ContinuerVersPageExoATrouAsLikeCorrection(m,this));
 		
-		
-		
-		
-		
-		
-		
+
 		
 		
 	}

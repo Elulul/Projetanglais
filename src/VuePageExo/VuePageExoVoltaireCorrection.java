@@ -2,10 +2,18 @@ package VuePageExo;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import ControlerVersPageExo.ContinuerVersPageExo;
 import Vue.Vue;
 import anglais.Modele;
 
@@ -15,13 +23,15 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 	boolean trouve;
 	boolean pasdefaute;
 	boolean click;
+	private JButton retour= new JButton(new ImageIcon("./images/TestBack.png"));
 	JLabel debut = new JLabel();
 	JLabel motatrouver = new JLabel();
 	JLabel fin = new JLabel();
 	JLabel nofaute = new JLabel();
 	Font f = new Font("Serif", Font.PLAIN, 36); 
 	Font f2 = new Font("Serif", Font.PLAIN, 20); 
-	
+	private BufferedImage image;
+
 		public VuePageExoVoltaireCorrection(Modele m,boolean trouve,boolean pasdefaute,boolean click){
 			this.m = m;
 			this.trouve = trouve;
@@ -30,9 +40,22 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 			
 			this.setLayout(null);
 			
+			try {
+				 
+		          image = ImageIO.read(new File("./images/Voltaire.png"));
+		          
+		    	  
+		       } catch (IOException ex) {
+		    	   ex.printStackTrace();
+		       }
+			
 			this.add(debut);
 			this.add(motatrouver);
 			this.add(fin);
+			this.add(retour);
+			retour.setBounds(20, 20, 80, 80);
+			retour.addActionListener(new ContinuerVersPageExo(m,this));
+			retour.setBorderPainted(false);
 			
 			
 			debut.setText("I ");
@@ -58,7 +81,7 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 					if(trouve){
 						motatrouver.setForeground(new Color(0,238,0));
 						this.add(nofaute);
-						nofaute.setText("Congratulation ! you find the mistake");
+						nofaute.setText("Congratulations ! You spotted the mistake");
 						nofaute.setBounds(500, 400,400, 50);
 						nofaute.setFont(f2);
 					}
@@ -66,8 +89,8 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 						motatrouver.setForeground(new Color(238,0,0));
 						
 						this.add(nofaute);
-						nofaute.setText("The mistake was on am");
-						nofaute.setBounds(500, 400,400, 50);
+						nofaute.setText("The mistake was on the word 'is' which should be 'am'");
+						nofaute.setBounds(450, 400,800, 50);
 						nofaute.setFont(f2);
 					}
 				}
@@ -86,4 +109,9 @@ public class VuePageExoVoltaireCorrection extends JPanel implements Vue {
 			m.getFenetre().setContentPane(this);
 			m.getFenetre().revalidate();
 		}
+		
+		protected void paintComponent(Graphics g) {
+	        super.paintComponent(g); 
+	        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+	    }
 }

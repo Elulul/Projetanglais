@@ -1,8 +1,13 @@
 package VuePageExo;
 
 import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -20,10 +25,21 @@ public class VuePageExoVoc extends JPanel implements Vue {
 	ArrayList<ArrayList<Object>> aAfficher = new ArrayList<ArrayList<Object>>();
 	ArrayList<ArrayList<String>> mot = new ArrayList<ArrayList<String>>();
 	private JButton retour = new JButton(new ImageIcon("./images/TestBack.png"));
+	private BufferedImage image;
+
 	public VuePageExoVoc (Modele m){
 		this.m = m;
 		
 		this.setLayout(null);
+		
+		try {
+			 
+	          image = ImageIO.read(new File("./images/motivation4.jpg"));
+	          
+	    	  
+	       } catch (IOException ex) {
+	    	   ex.printStackTrace();
+	       }
 		
 		this.add(retour);
 		retour.setBounds(20, 20, 80, 80);
@@ -58,6 +74,11 @@ public class VuePageExoVoc extends JPanel implements Vue {
 			}
 		}
 	}
+	
+	protected void paintComponent(Graphics g) {
+        super.paintComponent(g); 
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
 	
 	public void update() {
 		m.getFenetre().setContentPane(this);
