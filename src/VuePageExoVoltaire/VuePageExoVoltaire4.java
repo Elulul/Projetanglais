@@ -13,8 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ControlerVersPageExo.ContinuerVersPageExo;
-import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaireCorrection2;
-import ControlerVersPageExoVoltaire.recupererPosVoltaire3;
+import ControlerVersPageExoVoltaire.ContinuerVersPageExoVoltaireCorrection4;
+import ControlerVersPageExoVoltaire.recupererPosVoltaire4;
 import Vue.Vue;
 import anglais.Modele;
 
@@ -52,14 +52,14 @@ public class VuePageExoVoltaire4 extends JPanel implements Vue{
 		maphrase.setText("He has met her yesterday");
 		maphrase.setBounds(450, 300,800, 50);
 		maphrase.setBackground(null);
-		maphrase.addMouseListener(new recupererPosVoltaire3(m,this));
+		maphrase.addMouseListener(new recupererPosVoltaire4(m,this));
 		maphrase.setFont(f);
 		
 		
 		this.add(pasErreur);
 		pasErreur.setText("There are no mistakes");
 		pasErreur.setBounds(520, 450,300,50);
-		pasErreur.addActionListener(new ContinuerVersPageExoVoltaireCorrection2(m,this));
+		pasErreur.addActionListener(new ContinuerVersPageExoVoltaireCorrection4(m,this));
 		}
 	
 	
