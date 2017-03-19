@@ -2,7 +2,7 @@ package anglais;
 
 import javax.swing.JFrame;
 
-import Vuecours.VueCours;
+import Vue.VueDaccueil;
 
 public class Fenetre extends JFrame {
 	Modele m;
@@ -16,8 +16,8 @@ public class Fenetre extends JFrame {
 	    
 	    this.m = new Modele(this);
 	    
-	    //VueDaccueil v = new VueDaccueil(m);
-	    VueCours v= new VueCours(m);
+	    VueDaccueil v = new VueDaccueil(m);
+	    
 	    this.setContentPane(v);
 	    this.setVisible(true);
 	    
