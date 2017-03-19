@@ -9,7 +9,7 @@ public class Fenetre extends JFrame {
 	
 	public Fenetre(){
 		
-		this.setTitle("Bring home the madness");
+		this.setTitle("LearNglish");
 		this.setSize(1280, 740);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
