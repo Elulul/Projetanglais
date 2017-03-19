@@ -26,6 +26,7 @@ public class VueCours extends JPanel implements Vue {
 	
 	private JButton retour = new JButton(new ImageIcon("./images/Home.png"));
 	private JButton RegleAsLike = new JButton();
+	private JButton RegleAnA = new JButton();
 	private JButton VocabulaireATable = new JButton();
 	private JButton VocabulaireAnimauxSauvage = new JButton();
 	private JButton VocabulaireBricolage = new JButton();
@@ -48,6 +49,7 @@ public class VueCours extends JPanel implements Vue {
 		
 		this.add(retour);
 		this.add(RegleAsLike);
+		this.add(RegleAnA);
 		this.add(VocabulaireATable);
 		this.add(VocabulaireHabit);
 		this.add(VocabulaireAnimauxSauvage);
